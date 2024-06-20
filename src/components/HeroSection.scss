@@ -1,0 +1,296 @@
+.hero-section-container {
+  margin-bottom: 0;
+  background-color: white;
+  .hero {
+    padding: 150px 0;
+    padding-bottom: 0;
+    text-align: center;
+
+    h1,
+    h2 {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    h1 {
+      font-size: 60px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+      font-family: "Arial Black", sans-serif;
+      animation-delay: 0.2s;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: normal;
+      color: #555;
+      margin-bottom: 30px;
+      animation-delay: 0.4s;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.6s;
+
+      button {
+        padding: 15px 30px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        background-color: transparent;
+        color: #333;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.2);
+          transition: transform 0.3s ease;
+          z-index: -1;
+          transform: scaleX(0);
+          transform-origin: left;
+        }
+
+        &:hover::before {
+          transform: scaleX(1);
+        }
+
+        &.watch-video {
+          border: 1px solid black;
+        }
+
+        &.teach-with-ai {
+          border: 1px solid black;
+        }
+
+        &:hover {
+          transform: scale(1.1) rotate(5deg);
+          background-color: #ffd700;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .statistics {
+    padding: 80px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+
+    .outer-left,
+    .outer-right {
+      width: 20%;
+      padding: 0 30px;
+      position: relative;
+      /* Removed custom animation styles */
+
+      .top-outer-left-box,
+      .top-outer-right-box {
+        position: relative;
+
+        img:first-child {
+          width: 100%;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover img:first-child {
+          transform: scale(1.05);
+        }
+
+        img.line7,
+        img.rect382 {
+          position: absolute;
+        }
+
+        img.line7 {
+          bottom: 200px;
+          left: 0;
+          width: 100%;
+        }
+
+        img.rect382 {
+          bottom: 70px;
+          left: 0;
+          z-index: 100;
+          width: 100%;
+        }
+
+        margin-bottom: 20px;
+
+        div {
+          position: absolute;
+          z-index: 101;
+          bottom: 50px;
+          text-align: left;
+          padding-left: 20px;
+
+          h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.3s ease;
+          }
+
+          span {
+            font-size: 22px;
+            color: white;
+            transition: transform 0.3s ease;
+          }
+
+          &:hover h2,
+          &:hover span {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .bottom-outer-left-box,
+      .bottom-outer-right-box {
+        height: 100px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        span {
+          color: white;
+          font-size: 20px;
+        }
+
+        &:hover {
+          background-color: #333333;
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .middle {
+      width: 60%;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+
+      .inner-left,
+      .inner-middle,
+      .inner-right {
+        width: 30%;
+        position: relative;
+        /* Removed custom animation styles */
+
+        img {
+          width: 100%;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        div {
+          position: absolute;
+          z-index: 101;
+          bottom: 0px;
+          text-align: center;
+          color: white;
+          padding: 10px;
+          transition: background-color 0.3s ease;
+
+          span {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+          }
+
+          button {
+            background-color: #ffe353;
+            border: 1px solid black;
+            color: black;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+
+            &:hover {
+              background-color: #ffd700;
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+
+      .inner-left {
+        div {
+          width: fit-content;
+          border-bottom-left-radius: 20px;
+          border-bottom-right-radius: 20px;
+          background: linear-gradient(to right, #666666, black);
+        }
+      }
+
+      .inner-middle {
+        width: 25%;
+      }
+    }
+
+    .outer-right .bottom-outer-right-box {
+      background-color: #001d68;
+    }
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleUp {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes rotateIn {
+    to {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+}
