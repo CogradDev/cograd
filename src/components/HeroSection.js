@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { FaPlay } from "react-icons/fa";
 import "./HeroSection.scss";
-import bigFileHomeRightOpen from "../assets/file-home-right-open.png";
-import bigFileHomeLeftOpen from "../assets/file-home-left-open.png";
-import innerMiddle from "../assets/inner-middle.png";
-import innerLeft from "../assets/inner-left.png";
-import innerRight from "../assets/inner-right.png";
+import bigFileHomeRightOpen from "../assets/file-home-right-open.webp";
+import bigFileHomeLeftOpen from "../assets/file-home-left-open.webp";
+import innerMiddle from "../assets/inner-middle.webp";
+import innerLeft from "../assets/inner-left.webp";
+import innerRight from "../assets/inner-right.webp";
 import Line7 from "../assets/svg/Line 7.svg";
 import Rect382 from "../assets/svg/Rectangle 382.svg";
 import AOS from "aos";

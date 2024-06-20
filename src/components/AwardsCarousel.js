@@ -6,11 +6,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import './AwardsCarousel.scss';
 
-import awardImage1 from "../assets/aw1.jpg";
-import awardImage2 from "../assets/aw2.jpg";
-import awardImage3 from "../assets/aw3.jpg";
-import awardImage4 from "../assets/aw4.jpg";
-import awardImage5 from "../assets/aw5.jpg";
+import awardImage1 from "../assets/aw1.webp";
+import awardImage2 from "../assets/aw2.webp";
+import awardImage3 from "../assets/aw3.webp";
+import awardImage4 from "../assets/aw4.webp";
+import awardImage5 from "../assets/aw5.webp";
 
 const awardsData = [
   {

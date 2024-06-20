@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../assets/cograd-black-logo.png";
+import logo from "../assets/cograd-black-logo.webp";
 import "./Header.scss";
 
 const Header = () => {

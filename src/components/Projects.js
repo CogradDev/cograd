@@ -1,7 +1,7 @@
 import React from "react";
-import com1 from "../assets/off1.jpg"; // Adjust the path to your image file
-import com2 from "../assets/off2.jpg";
-import com3 from "../assets/off3.jpg";
+import com1 from "../assets/off1.webp"; // Adjust the path to your image file
+import com2 from "../assets/off2.webp";
+import com3 from "../assets/off3.webp";
 import "./Projects.scss";
 
 const Projects = () => {

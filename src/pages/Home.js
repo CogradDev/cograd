@@ -3,20 +3,20 @@ import "./Home.scss";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import HomeSlickCarousel from "../components/HomeSlickCarousel";
-import com1 from "../assets/community-1.png";
-import com2 from "../assets/community-2.png";
-import com3 from "../assets/community-3.png";
-import com4 from "../assets/community-4.png";
-import off1 from "../assets/off1.jpg";
-import off2 from "../assets/off2.jpg";
-import off3 from "../assets/off3.jpg";
-import off4 from "../assets/off1.jpg";
-import off5 from "../assets/off1.jpg";
+import com1 from "../assets/community-1.webp";
+import com2 from "../assets/community-2.webp";
+import com3 from "../assets/community-3.webp";
+import com4 from "../assets/community-4.webp";
+import off1 from "../assets/off1.webp";
+import off2 from "../assets/off2.webp";
+import off3 from "../assets/off3.webp";
+import off4 from "../assets/off1.webp";
+import off5 from "../assets/off1.webp";
 import Projects from "../components/Projects";
 import SuccessStories from "../components/SuccessStories";
 import Testimonials from "../components/Testimonials";
 import AwardsCarousel from "../components/AwardsCarousel";
-import ctaImage from "../assets/image 13.png"; // Adjust the path to your image
+import ctaImage from "../assets/image 13.webp"; // Adjust the path to your image
 import Footer from "../components/Footer";
 
 const Home = () => {

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./SuccessStories.scss";
-import off1 from "../assets/off1.jpg";
-import off2 from "../assets/off2.jpg";
-import off3 from "../assets/off3.jpg";
+import off1 from "../assets/off1.webp";
+import off2 from "../assets/off2.webp";
+import off3 from "../assets/off3.webp";
 
 const SuccessStories = () => {
   const stories = [

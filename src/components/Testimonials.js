@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Testimonials.scss";
-import childPic from "../assets/testimonial-child-pic.png";
+import childPic from "../assets/testimonial-child-pic.webp";
 
 const testimonialsData = {
   students: [

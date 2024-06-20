@@ -3,12 +3,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./HomeSlickCarousel.scss";
-import c1 from "../assets/c1.jpg";
-import c2 from "../assets/c2.jpg";
-import c3 from "../assets/c3.jpg";
-import c4 from "../assets/c4.jpg";
-import c5 from "../assets/c5.jpg";
-import c6 from "../assets/c6.jpg";
+import c1 from "../assets/c1.webp";
+import c2 from "../assets/c2.webp";
+import c3 from "../assets/c3.webp";
+import c4 from "../assets/c4.webp";
+import c5 from "../assets/c5.webp";
+import c6 from "../assets/c6.webp";
 
 const carouselItems = [
   { id: 1, src: c1, alt: "Item 1" },
