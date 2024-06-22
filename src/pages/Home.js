@@ -24,7 +24,7 @@ const Home = () => {
     <div className="home">
       <Header />
       <HeroSection />
-
+      {/* <HomeSlickCarousel /> */}
       <section className="innovation">
         <span>
           How Are We Innovating with{" "}
@@ -41,9 +41,9 @@ const Home = () => {
             </p>
           </div>
           <div className="feature special">
-            <h3>Smart Classes</h3>
+            <h3>Smart classNamees</h3>
             <p>
-              Equipped with the latest technology, our smart classrooms
+              Equipped with the latest technology, our smart classNamerooms
               facilitate interactive and immersive learning experiences. From
               virtual reality field trips to digital whiteboards, we ensure that
               every lesson is engaging and impactful.
@@ -66,19 +66,19 @@ const Home = () => {
       <section className="impact-metrics">
         <h2>Impact</h2>
         <div className="matrics-container">
-          <div class="metric">
+          <div className="metric">
             <h3>200+</h3>
             <p>Workshops Organized</p>
           </div>
-          <div class="metric">
+          <div className="metric">
             <h3>30,000+</h3>
             <p>Students Impacted</p>
           </div>
-          <div class="metric">
+          <div className="metric">
             <h3>2000+</h3>
             <p>Success Stories</p>
           </div>
-          <div class="metric">
+          <div className="metric">
             <h3>25+</h3>
             <p>Schools Collaborated</p>
           </div>
@@ -87,65 +87,63 @@ const Home = () => {
 
       <section className="community">
         <span>Our Community Members Come From</span>
-        <div class="offerings">
+        <div className="offerings">
           <div>
-            <img src={com1} alt="Community Member 1" class="offering-img" />
+            <img src={com1} alt="Community Member 1" className="offering-img" />
           </div>
           <div>
-            <img src={com2} alt="Community Member 2" class="offering-img" />
+            <img src={com2} alt="Community Member 2" className="offering-img" />
           </div>
           <div>
-            <img src={com3} alt="Community Member 3" class="offering-img" />
+            <img src={com3} alt="Community Member 3" className="offering-img" />
           </div>
           <div>
-            <img src={com4} alt="Community Member 4" class="offering-img" />
+            <img src={com4} alt="Community Member 4" className="offering-img" />
           </div>
         </div>
       </section>
 
-      <section class="key-offerings">
-        <div class="circle-container">
-          <div class="offering-img">
-            <img src={off1} alt="Offering 1" />
-          </div>
-          <div class="offering-img">
-            <img src={off2} alt="Offering 2" />
-          </div>
-          <div class="offering-img">
-            <img src={off3} alt="Offering 3" />
-          </div>
-          <div class="offering-img">
-            <img src={off4} alt="Offering 4" />
-          </div>
-          <div class="offering-img">
-            <img src={off5} alt="Offering 5" />
-          </div>
-        </div>
-        <div className="content">
+      <section className="key-offerings">
+        <div className="key-offering-heading">
           <h1>Our Key Offerings</h1>
           <div className="highlights">
-            <span style={{ color: "white" }}>Cograd Schools</span>
-            <span>Up-Skilling Programs</span>
+            <span>Cograd Schools</span>
+            <span style={{color: "yellow"}}>Up-Skilling Programs</span>
           </div>
-          <div className="details">
-            <ul>
-              <li>
-                At Cograd Schools, we provide a holistic educational experience
-                by integrating modern technology and traditional teaching
-                methods. Our programs focus on critical thinking, creativity,
-                and collaboration to prepare students for the future.
-              </li>
-              <li>
-                Our Up-Skilling Programs are designed to equip individuals with
-                the latest skills in various fields such as AI, data science,
-                and digital marketing. These programs are tailored to meet
-                industry demands and help participants stay ahead in their
-                careers.
-              </li>
-            </ul>
+        </div>
+        <div className="key-offering-contents">
+          <div className="circle-container">
+            <div className="offering-img">
+              <img src={off1} alt="Offering 1" />
+            </div>
+            <div className="offering-img">
+              <img src={off2} alt="Offering 2" />
+            </div>
+            <div className="offering-img">
+              <img src={off3} alt="Offering 3" />
+            </div>
+            <div className="offering-img">
+              <img src={off4} alt="Offering 4" />
+            </div>
+            <div className="offering-img">
+              <img src={off5} alt="Offering 5" />
+            </div>
+          </div>
+          <div className="content">
+            <div className="details">
+              <ul>
+                <li>
+                  At Cograd Schools, we provide a holistic educational experience by integrating modern technology and traditional teaching methods. Our programs focus on critical thinking, creativity, and collaboration to prepare students for the future.
+                </li>
+                <li>
+                  Our Up-Skilling Programs are designed to equip individuals with the latest skills in various fields such as AI, data science, and digital marketing. These programs are tailored to meet industry demands and help participants stay ahead in their careers.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
+
 
       <Projects />
 
