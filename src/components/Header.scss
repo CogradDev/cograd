@@ -1,27 +1,25 @@
-// src/components/Header.scss
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding:30px;
+  padding: 15px 30px;
   background-color: #ffffff;
   top: 0;
   z-index: 1000;
 
+
   .logo {
-    display: flex;
-    justify-content: center;
-    width: 25%;
+    width: 150px;
 
     img {
-      width: 50%;
+      width: 100%;
     }
   }
 
   .navigation {
-    width: 50%;
     display: flex;
     justify-content: center;
+    flex: 1;
 
     a {
       text-decoration: none;
@@ -29,41 +27,101 @@
       font-weight: 500;
       padding: 10px 15px;
       border-radius: 5px;
-      font-size: 20px;
+      font-size: 18px;
       transition: background-color 0.3s ease;
 
-      &:hover {
+      &:hover,
+      &:active {
         background-color: #f0f0f0;
         text-decoration: underline;
       }
+    }
 
-      &:active{
-        background-color: #f0f0f0;
-        text-decoration: underline;
-      }
+    @media (max-width: 768px) {
+      display: none;
     }
   }
 
   .button-container {
     display: flex;
     justify-content: center;
-    width: 25%;
+
     .contact-button {
-      
-      background-color: #0041E8;
+      background-color: #0041e8;
       color: #ffffff;
       padding: 10px 20px;
-      font-size: 20px;
+      font-size: 18px;
       border-radius: 5px;
       text-decoration: none;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      border: 1px solid black;
+      border: 1px solid #0041e8;
 
       &:hover {
         background-color: #0056b3;
       }
     }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1500;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      padding: 10px 0;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+
+      &:hover,
+      &:active {
+        background-color: #f0f0f0;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
