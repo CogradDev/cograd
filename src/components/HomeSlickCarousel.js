@@ -25,13 +25,11 @@ const HomeSlickCarousel = () => {
     centerPadding: "0",
     slidesToShow: 5,
     infinite: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 768,
         settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: "40px",
           slidesToShow: 1,
         },
       },
@@ -40,7 +38,7 @@ const HomeSlickCarousel = () => {
 
   return (
     <div className="half-circle-container">
-      <Slider {...settings} className="arc-carousel">
+      <Slider {...settings}>
         {carouselItems.map((item) => (
           <div key={item.id} className="carousel-item">
             <img src={item.src} alt={item.alt} />

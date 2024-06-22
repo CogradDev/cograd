@@ -61,7 +61,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <HomeSlickCarousel /> */}
+      <HomeSlickCarousel />
 
       <section className="impact-metrics">
         <h2>Impact</h2>

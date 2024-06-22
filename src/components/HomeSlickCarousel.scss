@@ -1,76 +1,58 @@
+// HomeSlickCarousel.scss
 .half-circle-container {
-  width: 100%;
-  height: 300px; /* Adjust height as needed */
   position: relative;
-  overflow: hidden;
-  background: transparent;
-}
-
-.half-circle-container::before {
-  content: '';
-  display: block;
   width: 100%;
-  height: 100%;
-  background: #0041e8; /* Background color of the half-circle */
-  border-radius: 0 0 50% 50% ;
-  position: absolute;
-  bottom: 0;
-}
+  margin: 0 auto;
+  padding-top: 50px; // Space for the top arc
+  height: 400px;
 
-.arc-carousel {
-  .slick-list {
-    overflow: visible; // Ensure overflow is visible to show transformed items
-  }
+  .slick-slider {
+    overflow: visible;
 
-  .slick-track {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-
-  .slick-slide {
-    transition: transform 0.5s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; // Ensure relative positioning for absolute transformations
-
-    img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    .slick-list {
+      overflow: hidden;
     }
-  }
 
-  .carousel-item {
-    padding: 10px; // Adjust padding as needed
-    border-radius: 10px;
-    max-width: 200px; // Adjust max-width as needed
-    position: absolute; // Position absolute to place items on an arc
-  }
+    .slick-track {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%; // Ensure the track fills the container height
 
-  .slick-active:nth-child(1) {
-    transform: translateY(50px) rotate(-25deg);
-  }
+      .carousel-item {
+        transform: translate(-50%, -50%); // Center items within the container
 
-  .slick-active:nth-child(2) {
-    transform: translateY(25px) rotate(-15deg);
-  }
+        &:nth-child(1) {
+          transform: rotate(-90deg) translateY(-50%) rotate(90deg); // Adjust rotation for the first item
+        }
 
-  .slick-active:nth-child(3) {
-    transform: translateY(0) rotate(0deg); // Center item
-  }
+        &:nth-child(2) {
+          transform: rotate(-60deg) translateY(-50%) rotate(60deg); // Adjust rotation for the second item
+        }
 
-  .slick-active:nth-child(4) {
-    transform: translateY(25px) rotate(15deg);
-  }
+        &:nth-child(3) {
+          transform: rotate(-30deg) translateY(-50%) rotate(30deg); // Adjust rotation for the third item
+        }
 
-  .slick-active:nth-child(5) {
-    transform: translateY(50px) rotate(25deg);
-  }
+        &:nth-child(4) {
+          transform: rotate(0deg) translateY(-50%) rotate(0deg); // Adjust rotation for the fourth item
+        }
 
-  .slick-active.slick-center {
-    transform: scale(1.2) translateY(-20px) !important; // Scale up the center item
-    z-index: 1;
+        &:nth-child(5) {
+          transform: rotate(30deg) translateY(-50%) rotate(-30deg); // Adjust rotation for the fifth item
+        }
+
+        &:nth-child(6) {
+          transform: rotate(60deg) translateY(-50%) rotate(-60deg); // Adjust rotation for the sixth item
+        }
+
+        img {
+          width: 100px; // Adjust based on your needs
+          height: auto;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
   }
 }
