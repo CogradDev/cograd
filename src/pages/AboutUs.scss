@@ -1,0 +1,424 @@
+.aboutus-container {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #0041e8;
+  display: flex;
+  flex-direction: column;
+
+  .aboutus-hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 40px;
+    height: 700px;
+    overflow: hidden;
+    background-color: white;
+
+    .aboutus-hero-image-1,
+    .aboutus-hero-image-2,
+    .aboutus-hero-image-3 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 15px;
+
+      .aboutus-hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+
+      .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: opacity 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+
+        h1 {
+          color: white;
+          font-size: 32px;
+          font-weight: bold;
+          margin: 0;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+
+    .aboutus-hero-image-1 {
+      width: 25%;
+      margin-left: 20px;
+    }
+
+    .aboutus-hero-secondary {
+      display: flex;
+      margin-left: 40px;
+      flex-direction: column;
+      width: 60%;
+      gap: 20px;
+    }
+  }
+
+  .aboutus-values {
+    padding: 30px;
+    background-color: white;
+
+    .aboutus-values-heading {
+      text-align: center;
+      font-size: 36px;
+      color: #0041e8;
+    }
+
+    .aboutus-values-list {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 80px;
+
+      .aboutus-values-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120px;
+        width: 120px;
+        padding: 100px;
+        margin: 10px;
+        border-radius: 20px;
+        background-color: #ffe353;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        .aboutus-values-text {
+          font-size: 1.5rem;
+          color: #000000;
+        }
+      }
+    }
+  }
+
+  .aboutus-founders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+
+    .aboutus-founders-heading {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .aboutus-founders-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 40px;
+      padding: 80px;
+      padding-top: 40px;
+
+      .aboutus-card {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #eff8ff;
+
+        .aboutus-card-inner {
+          display: flex;
+          flex-direction: column;
+
+          .aboutus-card-image-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+          }
+
+          .aboutus-card-heading {
+            font-size: 26px;
+            color: 30312C;
+            text-align: center;
+            margin-bottom: 10px;
+          }
+
+          .aboutus-card-description {
+            font-size: 16px;
+            line-height: 1.4;
+            color: #4a5568;
+            margin-bottom: 10px;
+          }
+
+          .aboutus-card-role-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .aboutus-card-role-inner {
+              display: flex;
+              align-items: center;
+
+              .aboutus-card-role {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #2d3748;
+                margin-right: 10px;
+                color: #007bff;
+              }
+
+              .aboutus-card-arrow {
+                height: 24px;
+                width: 24px;
+                color: #007bff;
+              }
+            }
+
+            .aboutus-card-linkedin {
+              height: 40px;
+              width: 40px;
+              object-fit: cover;
+              color: #007bff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .aboutus-partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 40px;
+
+    .aboutus-partners-heading {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 40px;
+    }
+
+    .aboutus-partners-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+
+      .aboutus-partners-image {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        padding: 20px;
+
+        transition: transform 0.3s ease;
+        background-color: white;
+
+        cursor: pointer;
+
+        img {
+          border-radius: 15px;
+          object-fit: cover;
+          width: 100%;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .aboutus-journey {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    background-image: url('../assets/off2.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    color: #fff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .aboutus-journey-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .aboutus-journey-heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #ffe353;
+    }
+
+    .aboutus-journey-timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 1000px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        background-color: #fff;
+        z-index: 1;
+      }
+
+      .aboutus-journey-step {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+        position: relative;
+        z-index: 2;
+
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+        }
+
+        .aboutus-journey-image {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+          background-color: white;
+          padding: 2px;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        .aboutus-journey-text {
+          width: 60%;
+          padding: 20px;
+          background-color: white;
+          border-radius: 15px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin-left: 20px;
+          margin-right: 20px;
+          position: relative;
+
+          &:nth-child(even) & {
+            margin-left: 0;
+            margin-right: 20px;
+          }
+
+          h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #0041e8;
+          }
+
+          p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #222;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media Queries for Responsiveness
+@media (max-width: 768px) {
+  .aboutus-hero {
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 20px;
+
+    
+
+    .aboutus-hero-image-1{
+      align-self: center;
+      width: 100% !important;
+      margin: 20px;
+    }
+    .aboutus-hero-image-2,
+    .aboutus-hero-image-3 {
+      width: 90%;
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+
+    .aboutus-hero-secondary {
+      align-self: center;
+      width: 100% !important;
+      margin: 20px;
+    }
+  }
+
+  .aboutus-values .aboutus-values-list {
+    flex-direction: column !important;
+    gap: 20px;
+  }
+
+  .aboutus-founders .aboutus-founders-list {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .aboutus-partners .aboutus-partners-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .aboutus-journey .aboutus-journey-timeline {
+    &::before {
+      left: 50%;
+      top: 0;
+      height: 100%;
+    }
+  }
+}

@@ -8,8 +8,9 @@
   z-index: 1000;
 
 
+
   .logo {
-    width: 150px;
+    width: 15vw;
 
     img {
       width: 100%;
@@ -20,7 +21,7 @@
     display: flex;
     justify-content: center;
     flex: 1;
-
+  
     a {
       text-decoration: none;
       color: black;
@@ -29,19 +30,24 @@
       border-radius: 5px;
       font-size: 18px;
       transition: background-color 0.3s ease;
-
+  
       &:hover,
       &:active {
         background-color: #f0f0f0;
         text-decoration: underline;
       }
+  
+      &.active {
+        background-color: #f0f0f0; /* Add your active link styles here */
+        font-weight: bold; /* For example, make the font bold */
+      }
     }
-
+  
     @media (max-width: 768px) {
       display: none;
     }
   }
-
+  
   .button-container {
     display: flex;
     justify-content: center;

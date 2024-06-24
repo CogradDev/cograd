@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+  
     span {
       text-align: center;
       margin-bottom: 60px;
@@ -19,42 +19,73 @@
       font-size: 26px;
       color: white;
     }
-
+  
     .features {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 40px;
-
+  
       .feature {
         max-width: 300px;
         text-align: center;
         padding: 20px;
         transition: transform 0.3s ease;
-
+  
         h3 {
           font-size: 24px;
           margin-bottom: 40px;
           color: white;
         }
-
+  
         p {
           font-size: 16px;
           color: white;
         }
-
+  
         &:hover {
           transform: translateY(-5px);
         }
-
+  
         &.special {
           border-left: 2px solid #ffe353;
           border-right: 2px solid #ffe353;
         }
       }
     }
+  
+    @media (max-width: 768px) {
+      padding: 40px;
+  
+      span {
+        font-size: 22px;
+        margin-bottom: 40px;
+        margin-top: 20px;
+      }
+  
+      .features {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+  
+        .feature {
+          max-width: 100%;
+          width: calc(100% - 40px);
+          margin-bottom: 20px;
+  
+          h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+  
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
   }
-
+  
   .impact-metrics {
     width: 100%;
     display: flex;
@@ -67,7 +98,7 @@
     border-radius: 20px;
 
     h2 {
-      font-size: 32px;
+      font-size: 2vw; // Make font size relative to the viewport width
       font-weight: bold;
       margin-bottom: 20px;
       color: white;
@@ -77,15 +108,18 @@
       display: flex;
       width: 100%;
       justify-content: center;
-      gap: 8%;
+      gap: 2vw; // Gap relative to the viewport width
+      flex-wrap: wrap;
 
       .metric {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 20%; // Make each metric relative to the container width
+        min-width: 150px; // Ensure a minimum size for small screens
 
         h3 {
-          padding: 20px;
+          padding: 1vw; // Padding relative to the viewport width
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -93,17 +127,44 @@
           background-color: #ffe353;
           border: 2px solid #9b8200;
           border-radius: 50%;
-          width: 100px;
-          height: 100px;
-          font-size: 26px;
+          width: 8vw; // Make width relative to the viewport width
+          height: 8vw; // Make height relative to the viewport width
+          font-size: 2vw; // Font size relative to the viewport width
           font-weight: bold;
           margin-bottom: 10px;
-          color: black; // Blue color for metrics titles
+          color: black;
         }
 
         p {
-          font-size: 16px;
+          font-size: 1.5vw; // Font size relative to the viewport width
           color: white;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding-bottom: 40px;
+      width: 90%; // Adjust width for smaller screens
+
+      h2 {
+        font-size: 4vw; // Adjust font size for smaller screens
+      }
+
+      .matrics-container {
+        gap: 4vw; // Adjust gap for smaller screens
+
+        .metric {
+          width: 40%; // Adjust width for smaller screens
+
+          h3 {
+            width: 16vw; // Adjust size for smaller screens
+            height: 16vw; // Adjust size for smaller screens
+            font-size: 4vw; // Adjust font size for smaller screens
+          }
+
+          p {
+            font-size: 3vw; // Adjust font size for smaller screens
+          }
         }
       }
     }
@@ -111,27 +172,27 @@
 
   .community {
     background-color: white;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 2vw; // Adjusted for responsiveness
+    padding: 2vw; // Adjusted for responsiveness
     width: 60%;
     align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -60px;
+    margin-top: -4vw; // Adjusted for responsiveness
 
     span {
-      font-size: 16px;
+      font-size: 1.6vw; // Adjusted for responsiveness
       font-weight: bold;
-      margin-bottom: 30px;
+      margin-bottom: 3vw; // Adjusted for responsiveness
       color: #333;
     }
 
     .offerings {
       display: flex;
       justify-content: space-around;
-      gap: 20px;
-      margin-top: 20px;
+      gap: 2vw; // Adjusted for responsiveness
+      margin-top: 2vw; // Adjusted for responsiveness
       width: 95%;
 
       div {
@@ -147,19 +208,19 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 50px;
     margin-top: 150px;
+    padding-bottom: 50px;
 
-    .key-offering-heading{
+    .key-offering-heading {
       color: white;
-      align-self: flex-end;
       display: flex;
+      align-self: flex-end;
       flex-direction: column;
       align-items: center;
       padding-right: 10%;
 
       h1 {
-        size: 136px !important;
+        font-size: 36px;
         margin-bottom: 40px;
         font-weight: 600;
       }
@@ -167,24 +228,38 @@
       .highlights {
         span {
           margin: 10px;
+          cursor: pointer;
+          transition: color 0.3s ease;
+  
+          &.active {
+            color: yellow;
+          }
+  
+          &:hover {
+            color: yellow;
+          }
         }
       }
     }
 
     .key-offering-contents {
       display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 40px;
 
       .circle-container {
         position: relative;
         border-radius: 50%;
-        width: 500px;
+        width: 50%;
         height: 500px;
-        width: 60%;
 
         .offering-img {
           position: absolute;
-          width: 150px;
-          height: 150px;
+          width: 200px;
+          height: 200px;
           overflow: hidden;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -210,19 +285,23 @@
         }
 
         .offering-img:nth-child(2) {
-          transform: translate(-50%, -50%) rotate(72deg) translateX(200px) rotate(-72deg);
+          transform: translate(-50%, -50%) rotate(72deg) translateX(200px)
+            rotate(-72deg);
         }
 
         .offering-img:nth-child(3) {
-          transform: translate(-50%, -50%) rotate(144deg) translateX(200px) rotate(-144deg);
+          transform: translate(-50%, -50%) rotate(144deg) translateX(200px)
+            rotate(-144deg);
         }
 
         .offering-img:nth-child(4) {
-          transform: translate(-50%, -50%) rotate(216deg) translateX(200px) rotate(-216deg);
+          transform: translate(-50%, -50%) rotate(216deg) translateX(200px)
+            rotate(-216deg);
         }
 
         .offering-img:nth-child(5) {
-          transform: translate(-50%, -50%) rotate(288deg) translateX(200px) rotate(-288deg);
+          transform: translate(-50%, -50%) rotate(288deg) translateX(200px)
+            rotate(-288deg);
         }
       }
 
@@ -232,7 +311,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
+    
         h1 {
           font-size: 32px;
           font-weight: bold;
@@ -257,18 +336,108 @@
           ul {
             list-style-type: disc;
             padding-left: 20px;
+         
 
             li {
               margin-bottom: 10px;
               font-size: 16px;
               color: white;
+              margin-bottom: 20px;
             }
           }
         }
       }
     }
+  }
 
+  @media (max-width: 768px) {
+    .key-offerings {
+      margin-top: 50px;
+      
 
+      .key-offering-heading {
+        padding-right: 0;
+        align-self: center;
+
+        h1 {
+          font-size: 36px;
+          margin-bottom: 20px;
+        }
+
+        .highlights {
+          span {
+            margin: 5px;
+          }
+        }
+      }
+
+      .key-offering-contents {
+        padding-top: 50px;
+        flex-direction: row-reverse;
+        overflow: hidden;
+
+        .circle-container {
+          width: 60%;
+          height: 200px;
+          left: 35px;
+
+          .offering-img {
+            width: 80px;
+            height: 80px;
+
+            &:nth-child(1) {
+              transform: translate(-50%, -50%) translateX(100px);
+            }
+
+            &:nth-child(2) {
+              transform: translate(-50%, -50%) rotate(72deg) translateX(100px)
+                rotate(-72deg);
+            }
+
+            &:nth-child(3) {
+              transform: translate(-50%, -50%) rotate(144deg) translateX(100px)
+                rotate(-144deg);
+            }
+
+            &:nth-child(4) {
+              transform: translate(-50%, -50%) rotate(216deg) translateX(100px)
+                rotate(-216deg);
+            }
+
+            &:nth-child(5) {
+              transform: translate(-50%, -50%) rotate(288deg) translateX(100px)
+                rotate(-288deg);
+            }
+          }
+        }
+
+        .content {
+          width: 100%;
+          padding: 10px;
+
+          h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+          }
+
+          .highlights {
+            span {
+              font-size: 14px;
+            }
+          }
+
+          .details {
+            ul {
+              padding-left: 10px;
+
+              li {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   .story-heading {
@@ -279,13 +448,12 @@
     font-size: 2rem;
     /* Adjust font size for smaller screens */
 
-    @media (min-width: 768px) {
-      font-size: 3rem;
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      text-align: center;
       /* Larger font size for bigger screens */
     }
   }
-
-
 
   .gallery-cta {
     padding: 40px 20px;
@@ -333,8 +501,6 @@
       margin-top: 20px;
     }
   }
-
-
 
   .collaboration-cta {
     display: flex;
@@ -437,7 +603,4 @@
       }
     }
   }
-
-
-
 }

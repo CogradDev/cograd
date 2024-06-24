@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.scss";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
@@ -18,13 +18,43 @@ import Testimonials from "../components/Testimonials";
 import AwardsCarousel from "../components/AwardsCarousel";
 import ctaImage from "../assets/image 13.webp"; // Adjust the path to your image
 import Footer from "../components/Footer";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
+  const [selectedOffering, setSelectedOffering] = useState("Cograd Schools");
+
+  const offeringsData = {
+    "Cograd Schools": {
+      images: [off1, off2, off3, off4, off5],
+      description: [
+        "At Cograd Schools, we provide a holistic educational experience by integrating modern technology and traditional teaching methods.",
+        "Our programs focus on critical thinking, creativity, and collaboration to prepare students for the future.",
+      ],
+    },
+    "Up-Skilling Programs": {
+      images: [off4, off5, off1, off3, off2],
+      description: [
+        "Our Up-Skilling Programs are designed to equip individuals with the latest skills in various fields such as AI, data science, and digital marketing.",
+        "These programs are tailored to meet industry demands and help participants stay ahead in their careers.",
+      ],
+    },
+  };
+  const handleClick = (offering) => {
+    setSelectedOffering(offering);
+  };
+
   return (
     <div className="home">
+      <Helmet>
+        <title>Cograd - Innovative and Affordable Education</title>
+        <meta
+          name="description"
+          content="Cograd offers innovative and affordable education solutions. Discover our vision for accessible education, services, and partnership opportunities. Learn more about Cograd now."
+        />
+      </Helmet>
       <Header />
       <HeroSection />
-      {/* <HomeSlickCarousel /> */}
+
       <section className="innovation">
         <span>
           How Are We Innovating with{" "}
@@ -61,7 +91,7 @@ const Home = () => {
         </div>
       </section>
 
-      <HomeSlickCarousel />
+      {/* <HomeSlickCarousel /> */}
 
       <section className="impact-metrics">
         <h2>Impact</h2>
@@ -107,43 +137,43 @@ const Home = () => {
         <div className="key-offering-heading">
           <h1>Our Key Offerings</h1>
           <div className="highlights">
-            <span>Cograd Schools</span>
-            <span style={{color: "yellow"}}>Up-Skilling Programs</span>
+            <span
+              className={selectedOffering === "Cograd Schools" ? "active" : ""}
+              onClick={() => handleClick("Cograd Schools")}
+            >
+              Cograd Schools
+            </span>
+            <span
+              className={
+                selectedOffering === "Up-Skilling Programs" ? "active" : ""
+              }
+              onClick={() => handleClick("Up-Skilling Programs")}
+            >
+              Up-Skilling Programs
+            </span>
           </div>
         </div>
         <div className="key-offering-contents">
           <div className="circle-container">
-            <div className="offering-img">
-              <img src={off1} alt="Offering 1" />
-            </div>
-            <div className="offering-img">
-              <img src={off2} alt="Offering 2" />
-            </div>
-            <div className="offering-img">
-              <img src={off3} alt="Offering 3" />
-            </div>
-            <div className="offering-img">
-              <img src={off4} alt="Offering 4" />
-            </div>
-            <div className="offering-img">
-              <img src={off5} alt="Offering 5" />
-            </div>
+            {offeringsData[selectedOffering].images.map((image, index) => (
+              <div className="offering-img" key={index}>
+                <img src={image} alt={`Offering ${index + 1}`} />
+              </div>
+            ))}
           </div>
           <div className="content">
             <div className="details">
               <ul>
-                <li>
-                  At Cograd Schools, we provide a holistic educational experience by integrating modern technology and traditional teaching methods. Our programs focus on critical thinking, creativity, and collaboration to prepare students for the future.
-                </li>
-                <li>
-                  Our Up-Skilling Programs are designed to equip individuals with the latest skills in various fields such as AI, data science, and digital marketing. These programs are tailored to meet industry demands and help participants stay ahead in their careers.
-                </li>
+                {offeringsData[selectedOffering].description.map(
+                  (item, index) => (
+                    <li key={index}>{item}</li>
+                  )
+                )}
               </ul>
             </div>
           </div>
         </div>
       </section>
-
 
       <Projects />
 
@@ -177,7 +207,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

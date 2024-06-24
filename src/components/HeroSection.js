@@ -28,6 +28,7 @@ const HeroSection = () => {
             <FaPlay style={{ marginRight: 10 }} /> Watch Video
           </button>
         </div>
+        
         <div className="statistics">
           <div className="outer-left" data-aos="fade-right">
             <div className="top-outer-left-box">

@@ -10,9 +10,9 @@ const Footer = () => {
         <div className="footer-section contact-info">
           <img src={logo} alt="Cograd Logo" className="footer-logo" />
           <p>Get In Touch</p>
-          <p>Phone: +91-</p>
-          <p>Email:</p>
-          <p>Address:</p>
+          <p>Phone: +91-9601234567</p>
+          <p>Email: support@cograd.com</p>
+          <p>Address: cograd tech village, bisarkh jalalpur, noida, UP</p>
         </div>
         <div className="footer-section">
           <h3>Company</h3>
