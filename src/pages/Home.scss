@@ -54,7 +54,7 @@
       }
     }
   
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       padding: 40px;
   
       span {
@@ -142,7 +142,7 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       padding-bottom: 40px;
       width: 90%; // Adjust width for smaller screens
 
@@ -350,7 +350,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     .key-offerings {
       margin-top: 50px;
       
@@ -448,7 +448,7 @@
     font-size: 2rem;
     /* Adjust font size for smaller screens */
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       font-size: 1.5rem;
       text-align: center;
       /* Larger font size for bigger screens */
@@ -575,7 +575,7 @@
       }
     }
 
-    @media (min-width: 768px) {
+    @media (max-width: 1024px) {
       padding: 8rem;
       /* Restore padding for larger screens */
 

@@ -95,7 +95,7 @@
   }
 
   /* Media queries for responsiveness */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .hero-section-container .hero h1 {
       font-size: 5vw; /* Adjusted font size for smaller screens */
     }
@@ -113,7 +113,7 @@
     }
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 1024px) {
    .hero{
       padding-top: 50px !important;
     }

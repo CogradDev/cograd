@@ -56,7 +56,7 @@ const Projects = () => {
 
   useEffect(() => {
     const updateSlidesToShow = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 1024) {
         setSlidesToShow(1);
       } else {
         setSlidesToShow(3);
