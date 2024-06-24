@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.scss";
 import logo from "../assets/logo-white.webp"; // Replace with the path to your logo
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -35,10 +35,11 @@ const Footer = () => {
           </p>
           <button className="download-button">Download on Google Play</button>
           <div className="social-media">
-            <FaFacebook />
-            <FaTwitter />
-            <FaLinkedin />
-            <FaInstagram />
+            <a href="https://www.facebook.com/cograd.in/" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+            <a href="https://x.com/cograd_in" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+            <a href="https://in.linkedin.com/company/cograd" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+            <a href="https://www.instagram.com/cograd.in" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://www.youtube.com/c/cograd" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
           </div>
         </div>
       </div>
