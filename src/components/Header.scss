@@ -82,7 +82,15 @@
       display: block;
     }
   }
+
+  @media (max-width: 1024px) {
+    .logo{
+      width: 30vw !important;
+    }
+  }
 }
+
+
 
 .sidebar {
   position: fixed;
@@ -131,3 +139,5 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
+
+
