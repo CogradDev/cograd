@@ -36,14 +36,14 @@ const HeroSection = () => {
               <img src={Line7} alt="" className="line7" />
               <div>
                 <h2>4%</h2>
-                <span>
+                <p>
                   Only 4% students in rural schools have access to computers and
                   AI.
-                </span>
+                </p>
               </div>
             </div>
             <div className="bottom-outer-left-box">
-              <span>Let them know AI!</span>
+              <p>Let them know AI!</p>
             </div>
           </div>
 
@@ -51,22 +51,22 @@ const HeroSection = () => {
             <div className="inner-left" data-aos="fade-up">
               <img src={innerLeft} alt="" />
               <div>
-                <span>Engaging children through AI</span>
+                <p>Engaging children through AI</p>
               </div>
             </div>
             <div className="inner-middle" data-aos="fade-up">
               <img src={innerMiddle} alt="" />
               <div>
-                <span>
+                <p>
                   Enhancing lives and creating impacts through digitalization.
-                </span>
+                </p>
                 <button className="teach-with-ai">Teach with VR</button>
               </div>
             </div>
             <div className="inner-right" data-aos="fade-up">
               <img src={innerRight} alt="" />
               <div>
-                <span>AI Empowering individuals</span>
+                <p>AI Empowering individuals</p>
                 <button className="teach-with-ai">Teach with AI</button>
               </div>
             </div>
@@ -78,14 +78,14 @@ const HeroSection = () => {
               <img src={Rect382} alt="" className="rect382" />
               <div>
                 <h2>28%</h2>
-                <span>
+                <p>
                   Only 4% students in rural schools have access to computers and
                   AI.
-                </span>
+                </p>
               </div>
             </div>
             <div className="bottom-outer-right-box">
-              <span>Innovating Schools! Promoting digitalisation!</span>
+              <p>Innovating Schools! Promoting digitalisation!</p>
             </div>
           </div>
         </div>
