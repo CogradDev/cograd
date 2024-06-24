@@ -575,7 +575,7 @@
       }
     }
 
-    @media (max-width: 1024px) {
+    @media (min-width: 1024px) {
       padding: 8rem;
       /* Restore padding for larger screens */
 
