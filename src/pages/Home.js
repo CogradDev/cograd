@@ -7,19 +7,19 @@ import com1 from "../assets/partners/community-1.webp";
 import com2 from "../assets/partners/community-2.webp";
 import com3 from "../assets/partners/community-3.webp";
 import com4 from "../assets/partners/community-4.webp";
-import off1 from "../assets/key-offerings/school1.jpg";
-import off2 from "../assets/key-offerings/school2.jpg";
-import off3 from "../assets/key-offerings/school3.jpg";
-import off4 from "../assets/key-offerings/school4.jpg";
-import off5 from "../assets/key-offerings/school5.jpg";
-import off6 from "../assets/key-offerings/upskill1.jpg";
-import off7 from "../assets/key-offerings/upskill2.jpg";
-import off8 from "../assets/key-offerings/upskill3.jpg";
-import off9 from "../assets/key-offerings/upskill4.jpg";
-import off10 from "../assets/key-offerings/upskill5.jpg";
-import aiImage from "../assets/innovation/ai-for-teachers.jpg";
-import smartClassesImage from "../assets/innovation/smart-classes.jpg";
-import skillDevelopmentImage from "../assets/innovation/skill-development.jpg";
+import off1 from "../assets/key-offerings/school1.webp";
+import off2 from "../assets/key-offerings/school2.webp";
+import off3 from "../assets/key-offerings/school3.webp";
+import off4 from "../assets/key-offerings/school4.webp";
+import off5 from "../assets/key-offerings/school5.webp";
+import off6 from "../assets/key-offerings/upskill1.webp";
+import off7 from "../assets/key-offerings/upskill2.webp";
+import off8 from "../assets/key-offerings/upskill3.webp";
+import off9 from "../assets/key-offerings/upskill4.webp";
+import off10 from "../assets/key-offerings/upskill5.webp";
+import aiImage from "../assets/innovation/ai-for-teachers.webp";
+import smartClassesImage from "../assets/innovation/smart-classes.webp";
+import skillDevelopmentImage from "../assets/innovation/skill-development.webp";
 import Projects from "../components/Projects";
 import SuccessStories from "../components/SuccessStories";
 import Testimonials from "../components/Testimonials";
@@ -66,7 +66,7 @@ const Home = () => {
 
   useEffect(() => {
     const options = {
-      duration: 2, // duration in seconds
+      duration: 5, // duration in seconds
       separator: ",", // thousands separator
     };
 

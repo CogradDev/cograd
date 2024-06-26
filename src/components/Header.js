@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom"; // Assuming you are using React Router
-import logo from "../assets/cograd-blue-logo.png";
+import logo from "../assets/cograd-blue-logo.webp";
 import "./Header.scss";
 import { FaBars } from "react-icons/fa";
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Projects.scss";
 import com1 from "../assets/Our-projects/project1.webp";
 import com2 from "../assets/Our-projects/project2.webp";
-import com3 from "../assets/Our-projects/project3.jpg";
+import com3 from "../assets/Our-projects/project3.webp";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

@@ -5,17 +5,17 @@ import Header from "../components/Header";
 import "./AboutUs.scss"; // Import the SCSS file
 
 import mission from "../assets/mission.webp";
-import vission from "../assets/vission.jpg";
+import vission from "../assets/vission.webp";
 import team from "../assets/our-team.webp";
-import innovation from "../assets/innovation.jpg";
-import integrity from "../assets/integrity.jpg";
-import excellence from "../assets/excellence.jpg";
-import himanshu from "../assets/himanshu.png";
-import saurabh from "../assets/saurabh.jpg";
-import j1 from "../assets/journey/j1.png";
+import innovation from "../assets/innovation.webp";
+import integrity from "../assets/integrity.webp";
+import excellence from "../assets/excellence.webp";
+import himanshu from "../assets/himanshu.webp";
+import saurabh from "../assets/saurabh.webp";
+import j1 from "../assets/journey/j1.webp";
 import j2 from "../assets/journey/j2.webp";
 import j3 from "../assets/journey/j3.webp";
-import j4 from "../assets/journey/j4.jpg";
+import j4 from "../assets/journey/j4.webp";
 import j5 from "../assets/journey/j5.webp";
 import com1 from "../assets/partners/community-1.webp";
 import com2 from "../assets/partners/community-2.webp";

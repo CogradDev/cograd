@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./Testimonials.scss";
-import student1 from "../assets/testimonials/stu4.jpg";
-import student2 from "../assets/testimonials/stu3.jpg";
-import teacher1 from "../assets/testimonials/teacher1.jpg";
-import teacher2 from "../assets/testimonials/teacher2.jpg";
-import parent from "../assets/testimonials/par1.jpg";
+import student1 from "../assets/testimonials/stu4.webp";
+import student2 from "../assets/testimonials/stu3.webp";
+import teacher1 from "../assets/testimonials/teacher1.webp";
+import teacher2 from "../assets/testimonials/teacher2.webp";
+import parent from "../assets/testimonials/par1.webp";
 
 const testimonialsData = {
   students: [
