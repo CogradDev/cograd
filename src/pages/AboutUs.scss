@@ -22,36 +22,36 @@
       height: 100%;
       overflow: hidden;
       border-radius: 15px;
+    }
 
-      .aboutus-hero-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 15px;
-      }
+    .aboutus-hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
 
-      .image-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        transition: opacity 0.3s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        opacity: 1;
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: opacity 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+    }
 
-        h1 {
-          color: white;
-          font-size: 32px;
-          font-weight: bold;
-          margin: 0;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-      }
+    .image-overlay h1 {
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .aboutus-hero-image-1 {
@@ -65,6 +65,83 @@
       flex-direction: column;
       width: 60%;
       gap: 20px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .aboutus-hero-image-1:hover .flip-card-inner,
+    .aboutus-hero-image-2:hover .flip-card-inner,
+    .aboutus-hero-image-3:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .front,
+    .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      border-radius: 20px;
+    }
+
+    .front {
+      transform: rotateY(0);
+      background: rgba(
+        0,
+        0,
+        0,
+        0.6
+      ); // Ensures the front side has a background overlay
+    }
+
+    .back {
+      transform: rotateY(180deg);
+      background-color: #0041e8; // Adjust as necessary for the back side
+      color: white; // Ensure text visibility on the back side
+
+      p {
+        width: 80%;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+  }
+  // Media Queries for Responsiveness
+  @media (max-width: 1024px) {
+    .aboutus-hero {
+      flex-direction: column !important;
+      padding: 20px;
+
+      .aboutus-hero-image-1 {
+        align-self: center;
+        width: 100% !important;
+        margin: 20px;
+        height: 30%;
+      }
+
+      .aboutus-hero-secondary {
+        height: 70%;
+        align-self: center;
+        width: 100% !important;
+        margin: 20px;
+        .aboutus-hero-image-2,
+        .aboutus-hero-image-3 {
+          width: 100% !important;
+          margin-left: 0;
+          margin-bottom: 20px;
+        }
+      }
     }
   }
 
@@ -81,14 +158,12 @@
     .aboutus-values-list {
       width: 100%;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 80px;
 
       .aboutus-values-item {
         width: 300px; /* Adjust width as needed */
         height: 300px; /* Adjust height as needed */
-        margin: 10px;
         perspective: 1000px;
 
         .values-flip-card-inner {
@@ -131,6 +206,15 @@
           }
         }
       }
+    }
+  }
+
+  // Media Queries for Responsiveness
+  @media (max-width: 1024px) {
+    .aboutus-values .aboutus-values-list {
+      flex-direction: column !important;
+      align-items: center !important;
+      padding: 10px !important;
     }
   }
 
@@ -224,7 +308,14 @@
     }
   }
 
-
+  // Media Queries for Responsiveness
+  @media (max-width: 1024px) {
+    .aboutus-founders .aboutus-founders-list {
+      flex-direction: column;
+      padding: 20px;
+      width: 80%;
+    }
+  }
   .aboutus-partners {
     width: 80%;
     align-self: center;
@@ -277,7 +368,7 @@
               padding: 0 10px;
               opacity: 1;
               transition: opacity 0.5s ease;
-              height: 200px;
+              height: 10vw;
               background-color: white;
 
               div {
@@ -286,9 +377,9 @@
                 align-items: center;
                 height: 100%;
                 width: 100%;
-            
+
                 .carousel-img {
-                  width: 70%;                  
+                  width: 70%;
                   border-radius: 10px;
                 }
               }
@@ -316,6 +407,14 @@
           }
         }
       }
+    }
+  }
+
+  // Media Queries for Responsiveness
+  @media (max-width: 1024px) {
+    .aboutus-partners .aboutus-partners-list {
+      flex-direction: column;
+      gap: 20px;
     }
   }
 
@@ -439,113 +538,15 @@
       }
     }
   }
-}
 
-// Media Queries for Responsiveness
-@media (max-width: 1024px) {
-  .aboutus-hero {
-    flex-direction: column !important;
-    height: auto !important;
-    padding: 20px;
-
-    .aboutus-hero-image-1 {
-      align-self: center;
-      width: 100% !important;
-      margin: 20px;
+  // Media Queries for Responsiveness
+  @media (max-width: 1024px) {
+    .aboutus-journey .aboutus-journey-timeline {
+      &::before {
+        left: 50%;
+        top: 0;
+        height: 100%;
+      }
     }
-    .aboutus-hero-image-2,
-    .aboutus-hero-image-3 {
-      width: 90%;
-      margin-left: 0;
-      margin-bottom: 20px;
-    }
-
-    .aboutus-hero-secondary {
-      align-self: center;
-      width: 100% !important;
-      margin: 20px;
-    }
-  }
-
-  .aboutus-values .aboutus-values-list {
-    flex-direction: column !important;
-    gap: 20px;
-  }
-
-  .aboutus-founders .aboutus-founders-list {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .aboutus-partners .aboutus-partners-list {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .aboutus-journey .aboutus-journey-timeline {
-    &::before {
-      left: 50%;
-      top: 0;
-      height: 100%;
-    }
-  }
-}
-
-.aboutus-hero-image-1,
-.aboutus-hero-image-2,
-.aboutus-hero-image-3 {
-  position: relative;
-  width: 300px; // Adjust as necessary
-  height: 300px; // Adjust as necessary
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-}
-
-.aboutus-hero-image-1:hover .flip-card-inner,
-.aboutus-hero-image-2:hover .flip-card-inner,
-.aboutus-hero-image-3:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.front,
-.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  border-radius: 20px;
-}
-
-.front {
-  transform: rotateY(0);
-  background: rgba(
-    0,
-    0,
-    0,
-    0.6
-  ); // Ensures the front side has a background overlay
-}
-
-.back {
-  transform: rotateY(180deg);
-  background-color: #0041e8; // Adjust as necessary for the back side
-  color: white; // Ensure text visibility on the back side
-
-  p {
-    width: 80%;
-    font-weight: bold;
-    font-size: 20px;
   }
 }
