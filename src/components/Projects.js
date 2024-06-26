@@ -4,6 +4,12 @@ import com1 from "../assets/off1.webp";
 import com2 from "../assets/off2.webp";
 import com3 from "../assets/off3.webp";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
+
 // Assuming you have imported project images
 const projectData = [
   {
@@ -51,59 +57,46 @@ const projectData = [
 ];
 
 const Projects = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [slidesToShow, setSlidesToShow] = useState(3);
 
-  useEffect(() => {
-    const updateSlidesToShow = () => {
-      if (window.innerWidth < 1024) {
-        setSlidesToShow(1);
-      } else {
-        setSlidesToShow(3);
-      }
-    };
 
-    updateSlidesToShow();
-    window.addEventListener("resize", updateSlidesToShow);
-    return () => window.removeEventListener("resize", updateSlidesToShow);
-  }, []);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + slidesToShow) % projectData.length);
+  const settings = {
+    dots: false,
+    infinite: true,
+    arrow: false,
+    speed: 500,
+    slidesToShow: 4, // Adjust the number of slides shown per screen
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
-
-  const getVisibleProjects = () => {
-    const endIndex = currentIndex + slidesToShow;
-    if (endIndex <= projectData.length) {
-      return projectData.slice(currentIndex, endIndex);
-    } else {
-      return [
-        ...projectData.slice(currentIndex),
-        ...projectData.slice(0, endIndex - projectData.length),
-      ];
-    }
-  };
-
-  const visibleProjects = getVisibleProjects();
 
   return (
     <section className="projects">
       <h2>Our Projects</h2>
       <div className="project-list">
-        {visibleProjects.map((project) => (
-          <div key={project.id} className="project">
-            <img src={project.image} alt={project.alt} className="project-img" />
-            <div className="project-details">
-              <span>{project.description}</span>
+        <Slider {...settings}>
+          {projectData.map((project) => (
+            <div key={project.id} className="project">
+              <img
+                src={project.image}
+                alt={project.alt}
+                className="project-img"
+              />
+              <div className="project-details">
+                <span>{project.description}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </Slider>
       </div>
-      {projectData.length > slidesToShow && (
-        <button className="next-button" onClick={handleNext}>
-          Next
-        </button>
-      )}
     </section>
   );
 };

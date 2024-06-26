@@ -10,7 +10,8 @@
 
 
   .logo {
-    width: 15vw;
+    padding: 20px;
+    width: 10vw;
 
     img {
       width: 100%;
@@ -20,26 +21,23 @@
   .navigation {
     display: flex;
     justify-content: center;
-    flex: 1;
+    gap: 60px;
   
     a {
       text-decoration: none;
       color: black;
-      font-weight: 500;
-      padding: 10px 15px;
-      border-radius: 5px;
+      font-weight: 600;
       font-size: 20px;
       transition: background-color 0.3s ease;
+      text-shadow: 2px 2px #eeecec;
   
       &:hover,
       &:active {
-        background-color: #f0f0f0;
-        text-decoration: underline;
+        border-bottom: 3px solid black;
       }
   
       &.active {
-        background-color: #f0f0f0; /* Add your active link styles here */
-        font-weight: bold; /* For example, make the font bold */
+        border-bottom: 3px solid black;
       }
     }
   

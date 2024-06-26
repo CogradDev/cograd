@@ -18,12 +18,18 @@ import img11 from "../assets/c6.webp";
 import img12 from "../assets/community-1.webp";
 import img13 from "../assets/community-2.webp";
 import img14 from "../assets/community-3.webp";
+import img15 from "../assets/community-4.webp";
 import { FaLinkedin, FaLongArrowAltRight } from "react-icons/fa";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const data = [
-  { innovativeText: "Innovative" },
-  { innovativeText: "Affordable" },
-  { innovativeText: "Accessible" },
+  { innovativeText: "Innovation", image: img1 },
+  { innovativeText: "Integrity", image: img2 },
+  { innovativeText: "Excellence", image: img3 },
+  // Add more values and corresponding images as needed
 ];
 
 const data1 = [
@@ -41,19 +47,15 @@ const data1 = [
     linkedin: "",
     role: "Co-Founder, COO",
   },
-  {
-    username: "Vaibhav Raj",
-    description:
-      "Marketing guy Marketing guy Marketing guyMarketing guyMarketing guyMarketing guy",
-    linkedin: "",
-    role: "Co-Founder, COO",
-  },
 ];
 
 const partnerData = [
   { partnerImg: img12 },
   { partnerImg: img13 },
   { partnerImg: img14 },
+  { partnerImg: img15 },
+  { partnerImg: img12 },
+  { partnerImg: img13 },
 ];
 
 const journeyData = [
@@ -123,6 +125,25 @@ const AboutUsGeanco = ({
   );
 };
 
+const settings = {
+  dots: false,
+  infinite: true,
+  arrow : false,
+  speed: 500,
+  slidesToShow: 4, // Adjust the number of slides shown per screen
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+  ]
+};
+
 const AboutUs = () => {
   return (
     <div className="aboutus-container">
@@ -133,46 +154,78 @@ const AboutUs = () => {
           content="Discover the vision of Cograd's founders for building accessible and innovative schools in India. Learn about our journey, services, and partnership. Contact us for more information."
         />
       </Helmet>
-      <Header/>
+      <Header />
       <div className="aboutus-hero">
         <div className="aboutus-hero-image-1">
-          <div className="image-overlay">
-            <h1>Mission</h1>
+          <div className="flip-card-inner">
+            <div className="front">
+              <div className="image-overlay">
+                <h1>Mission</h1>
+              </div>
+              <img src={img4} alt="Mission" className="aboutus-hero-image" />
+            </div>
+            <div className="back">
+              <p>
+                Our mission is to provide quality education that is innovative,
+                affordable, and accessible to all.
+              </p>
+            </div>
           </div>
-          <img src={img4} alt="product image" className="aboutus-hero-image" />
         </div>
         <div className="aboutus-hero-secondary">
           <div className="aboutus-hero-image-2">
-            <div className="image-overlay">
-              <h1>Vision</h1>
+            <div className="flip-card-inner">
+              <div className="front">
+                <div className="image-overlay">
+                  <h1>Vision</h1>
+                </div>
+                <img src={img4} alt="Vision" className="aboutus-hero-image" />
+              </div>
+              <div className="back">
+                <p>
+                  Our vision is to revolutionize education with cutting-edge
+                  technology and personalized support.
+                </p>
+              </div>
             </div>
-            <img
-              src={img4}
-              alt="product image"
-              className="aboutus-hero-image"
-            />
           </div>
           <div className="aboutus-hero-image-3">
-            <div className="image-overlay">
-              <h1>Our Team</h1>
+            <div className="flip-card-inner">
+              <div className="front">
+                <div className="image-overlay">
+                  <h1>Our Team</h1>
+                </div>
+                <img src={img4} alt="Team" className="aboutus-hero-image" />
+              </div>
+              <div className="back">
+                <p>
+                  Meet our dedicated team of professionals who are committed to
+                  making a difference in education.
+                </p>
+              </div>
             </div>
-            <img
-              src={img4}
-              alt="product image"
-              className="aboutus-hero-image"
-            />
           </div>
         </div>
       </div>
 
-      {/* values section */}
+      {/* Values Section */}
       <div className="aboutus-values">
         <h4 className="aboutus-values-heading">Our Values</h4>
         <div className="aboutus-values-list">
           <Suspense fallback={<div>Loading feed...</div>}>
             {data.map((d, index) => (
-              <div key={"featuresList" + index} className="aboutus-values-item">
-                <h1 className="aboutus-values-text">{d.innovativeText}</h1>
+              <div key={`featuresList${index}`} className="aboutus-values-item">
+                <div className="values-flip-card-inner">
+                  <div className="values-front">
+                    <h1 className="aboutus-values-text">{d.innovativeText}</h1>
+                  </div>
+                  <div
+                    className="values-back"
+                    style={{ backgroundImage: `url(${d.image})` }}
+                  >
+                    {/* Image background set dynamically */}
+                  </div>
+                </div>
               </div>
             ))}
           </Suspense>
@@ -192,22 +245,18 @@ const AboutUs = () => {
       </div>
 
       {/* partners section */}
-      <div className="aboutus-partners">
-        <h5 className="aboutus-partners-heading">Our Partners</h5>
-        <div className="aboutus-partners-list">
-          <Suspense fallback={<div>Loading feed...</div>}>
-            {partnerData.map((partner, index) => (
-              <div className="aboutus-partners-image">
-                <img
-                  key={"partnersList" + index}
-                  src={partner.partnerImg}
-                  alt="partner image"
-                />
-              </div>
-            ))}
-          </Suspense>
-        </div>
+      <section className="aboutus-partners">
+      <h5 className="aboutus-partners-heading">Our Partners</h5>
+      <div className="carousel-wrapper">
+        <Slider {...settings}>
+          {partnerData.map((member) => (
+            <div key={member.id}>
+              <img src={member.partnerImg} alt="" className="carousel-img" />
+            </div>
+          ))}
+        </Slider>
       </div>
+    </section>
 
       {/* journey section */}
       <div className="aboutus-journey">
@@ -233,7 +282,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };

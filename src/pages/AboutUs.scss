@@ -81,32 +81,54 @@
     .aboutus-values-list {
       width: 100%;
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 80px;
 
       .aboutus-values-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 120px;
-        width: 120px;
-        padding: 100px;
+        width: 300px; /* Adjust width as needed */
+        height: 300px; /* Adjust height as needed */
         margin: 10px;
-        border-radius: 20px;
-        background-color: #ffe353;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        cursor: pointer;
+        perspective: 1000px;
 
-        &:hover {
-          transform: scale(1.05);
-        }
+        .values-flip-card-inner {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: transform 0.5s;
+          cursor: pointer;
 
-        .aboutus-values-text {
-          font-size: 1.5rem;
-          color: #000000;
+          &:hover {
+            transform: rotateY(180deg);
+          }
+
+          .values-front,
+          .values-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffe353;
+
+            .aboutus-values-text {
+              font-size: 1.5rem;
+              color: #000;
+              text-align: center;
+            }
+          }
+
+          .values-back {
+            transform: rotateY(180deg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
         }
       }
     }
@@ -202,48 +224,96 @@
     }
   }
 
+
   .aboutus-partners {
+    width: 80%;
+    align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 80px; // Adjusted for responsiveness
+    overflow: hidden;
 
     .aboutus-partners-heading {
       font-size: 2rem;
       font-weight: bold;
       color: white;
       margin-bottom: 40px;
+      text-align: center;
     }
 
-    .aboutus-partners-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
+    .carousel-wrapper {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
 
-      .aboutus-partners-image {
-        width: 200px;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        padding: 20px;
+      .slick-slider {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        user-select: none;
+        touch-action: pan-y;
+        -webkit-tap-highlight-color: transparent;
+        width: 100%;
 
-        transition: transform 0.3s ease;
-        background-color: white;
+        .slick-list {
+          position: relative;
+          display: block;
+          overflow: hidden;
+          margin: 0;
+          padding: 0;
 
-        cursor: pointer;
+          .slick-track {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            transition: transform 0.5s ease;
 
-        img {
-          border-radius: 15px;
-          object-fit: cover;
-          width: 100%;
+            .slick-slide {
+              align-items: center;
+              padding: 0 10px;
+              opacity: 1;
+              transition: opacity 0.5s ease;
+              height: 200px;
+              background-color: white;
+
+              div {
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+            
+                .carousel-img {
+                  width: 70%;                  
+                  border-radius: 10px;
+                }
+              }
+            }
+          }
         }
+      }
+    }
 
-        &:hover {
-          transform: scale(1.05);
+    @media (max-width: 1024px) {
+      width: 80%; // Adjusted for smallest screens
+      padding: 10px; // Adjusted for smallest screens
+
+      span {
+        font-size: 1.4rem; // Adjusted for smallest screens
+        margin-bottom: 20px; // Adjusted for smallest screens
+      }
+
+      .carousel-wrapper {
+        .slick-slider {
+          .slick-slide {
+            img {
+              max-width: 90%; // Adjusted for smallest screens
+            }
+          }
         }
       }
     }
@@ -255,7 +325,7 @@
     align-items: center;
     padding: 40px 20px;
     background-color: #f9f9f9;
-    background-image: url('../assets/off2.webp');
+    background-image: url("../assets/off2.webp");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -378,9 +448,7 @@
     height: auto !important;
     padding: 20px;
 
-    
-
-    .aboutus-hero-image-1{
+    .aboutus-hero-image-1 {
       align-self: center;
       width: 100% !important;
       margin: 20px;
@@ -420,5 +488,64 @@
       top: 0;
       height: 100%;
     }
+  }
+}
+
+.aboutus-hero-image-1,
+.aboutus-hero-image-2,
+.aboutus-hero-image-3 {
+  position: relative;
+  width: 300px; // Adjust as necessary
+  height: 300px; // Adjust as necessary
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.aboutus-hero-image-1:hover .flip-card-inner,
+.aboutus-hero-image-2:hover .flip-card-inner,
+.aboutus-hero-image-3:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  border-radius: 20px;
+}
+
+.front {
+  transform: rotateY(0);
+  background: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); // Ensures the front side has a background overlay
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: #0041e8; // Adjust as necessary for the back side
+  color: white; // Ensure text visibility on the back side
+
+  p {
+    width: 80%;
+    font-weight: bold;
+    font-size: 20px;
   }
 }

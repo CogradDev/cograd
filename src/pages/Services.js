@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import React from "react";
+import React, { useState } from "react";
 import img1 from "../assets/aw1.webp";
 import img2 from "../assets/aw2.webp";
 import img3 from "../assets/aw3.webp";
@@ -14,36 +14,86 @@ const servicesList = [
   {
     name: "School Upgradation",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Ipsum a quis metus porta. Dictum nunc at vitae vitae condimentum mauris aliquam. Lorem ipsum dolor sit amet consectetur. Ipsum a quis metus porta. Dictum nunc at vitae vitae condimentum mauris aliquam.",
+      "Enhance your school’s infrastructure and facilities with our comprehensive school upgradation services. We provide tailored solutions to modernize classrooms, labs, and administrative areas, ensuring a conducive environment for learning and growth.",
     image: img1,
   },
   {
     name: "Smart Classes",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Ipsum a quis metus porta. Dictum nunc at vitae vitae condimentum mauris aliquam. Lorem ipsum dolor sit amet consectetur. Ipsum a quis metus porta. Dictum nunc at vitae vitae condimentum mauris aliquam.",
+      "Transform traditional classrooms into interactive learning spaces with our smart classes solutions. Utilizing cutting-edge technology, we enhance engagement and comprehension through multimedia content, collaborative tools, and real-time assessments.",
     image: img2,
   },
   {
     name: "Smart Labs / Dream Lab",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Ipsum a quis metus porta. Dictum nunc at vitae vitae condimentum mauris aliquam. Lorem ipsum dolor sit amet consectetur. Ipsum a quis metus porta. Dictum nunc at vitae vitae condimentum mauris aliquam.",
+      "Introduce innovation into education with our smart labs and dream lab programs. Students engage in hands-on experiments, simulations, and project-based learning, fostering creativity, critical thinking, and problem-solving skills.",
     image: img3,
   },
   {
     name: "Digitalising Schools",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Ipsum a quis metus porta. Dictum nunc at vitae vitae condimentum mauris aliquam. Lorem ipsum dolor sit amet consectetur. Ipsum a quis metus porta. Dictum nunc at vitae vitae condimentum mauris aliquam.",
+      "Digitally transform your educational institution with our digitalization services. From administrative processes to curriculum delivery, we streamline operations, improve access to resources, and enhance overall efficiency.",
     image: img4,
   },
   {
-    name: "Smart Labs / Dream Lab",
+    name: "Personalized Learning Paths",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Ipsum a quis metus porta. Dictum nunc at vitae vitae condimentum mauris aliquam. Lorem ipsum dolor sit amet consectetur. Ipsum a quis metus porta. Dictum nunc at vitae vitae condimentum mauris aliquam.",
+      "Empower every student with personalized learning paths tailored to their unique needs and learning styles. Through adaptive technologies and data-driven insights, we optimize learning outcomes and student success.",
     image: img5,
   },
 ];
 
+
+
+
+
+const Modal = ({ isOpen, service, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal">
+        <button className="close-modal" onClick={onClose}>
+          &times;
+        </button>
+        <img src={service.image} alt={service.name} className="modal-image" />
+        <div className="modal-content">
+          <h2>{service.name}</h2>
+          <p>{service.description}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+
 export default function Services() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
+
+  const openModal = (service) => {
+    setSelectedService(service);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleModelClick = (service) => {
+    openModal(service);
+  };
+
+
+  const handleButtonClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSffTQsBZwZizYfSGFD0EBk0wswkqi1sgmr5AeOi_xVymPT80w/viewform?embedded=true",
+      "_blank"
+    );
+  };
+
+
   return (
     <div className="services-page">
       <Helmet>
@@ -74,7 +124,7 @@ export default function Services() {
               <span className="service-category">/Service</span>
               <h2>{service.name}</h2>
               <p>{service.description}</p>
-              <button className="learn-more-button">Learn More</button>
+              <button className="learn-more-button"   onClick={() => handleModelClick(service)}>Learn More</button>
             </div>
           </div>
         ))}
@@ -92,10 +142,11 @@ export default function Services() {
               personalized support, and tailored programs to enhance teaching,
               learning, and student outcomes.
             </p>
-            <button>Contact Us for Collaboration</button>
+            <button onClick={handleButtonClick}>Contact Us for Collaboration</button>
           </div>
         </div>
       </div>
+      <Modal isOpen={modalOpen} service={selectedService} onClose={closeModal} />
       <Footer />
     </div>
   );

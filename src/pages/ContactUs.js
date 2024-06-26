@@ -23,18 +23,22 @@ const ContactUs = () => {
               Get in <span>Touch</span>
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Ipsum a quis metus porta.
-              Dictum nunc at vitae vitae condimentum mauris aliquam.
+              We are here to assist you with any inquiries you may have. Please
+              fill out the form below and we'll get back to you shortly.
             </p>
             <form>
-              <input type="text" name="name" placeholder="Name" />
-              <input type="email" name="email" placeholder="Email" />
-              <input type="text" name="phone" placeholder="Phone number" />
+              <input type="text" name="name" placeholder="Your Name" />
+              <input type="email" name="email" placeholder="Your Email" />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Your Phone Number (optional)"
+              />
               <select name="how">
                 <option value="">How did you find us?</option>
                 <option value="google">Google</option>
                 <option value="social">Social Media</option>
-                <option value="friend">Friend</option>
+                <option value="friend">From a Friend</option>
               </select>
               <button type="submit">SEND</button>
             </form>
@@ -42,12 +46,12 @@ const ContactUs = () => {
               <p>
                 <strong>PHONE</strong>
                 <br />
-                0000000000
+                +91 8917307407
               </p>
               <p>
                 <strong>EMAIL</strong>
                 <br />
-                xxxx@gmail.com
+                info@cograd.com
               </p>
             </div>
           </div>
@@ -60,7 +64,6 @@ const ContactUs = () => {
               allowFullScreen=""
               loading="lazy"
             ></iframe>
-
           </div>
         </div>
       </div>

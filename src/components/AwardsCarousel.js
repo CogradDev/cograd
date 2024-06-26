@@ -86,7 +86,7 @@ const AwardsCarousel = () => {
               {centerIndex === index ? (
                 <div className="award-info">
                   <h3>{award.title}</h3>
-                  <p>{award.description}</p>
+                  {/* <p>{award.description}</p> */}
                 </div>
               ) : null}
             </div>

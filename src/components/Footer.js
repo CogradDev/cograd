@@ -3,16 +3,25 @@ import "./Footer.scss";
 import logo from "../assets/logo-white.webp"; // Replace with the path to your logo
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 
+
+
 const Footer = () => {
+
+  const handleButtonClick = () => {
+    window.open(
+      "https://play.google.com/store/apps/details?id=com.learn.Cograd&pcampaignid=web_share",
+      "_blank"
+    );
+  };
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section contact-info">
           <img src={logo} alt="Cograd Logo" className="footer-logo" />
           <p>Get In Touch</p>
-          <p>Phone: +91-9601234567</p>
+          <p>Phone: +91-8917307407</p>
           <p>Email: support@cograd.com</p>
-          <p>Address: cograd tech village, bisarkh jalalpur, noida, UP</p>
+          <p>Address: Cograd Tech Village, Bisrakh Jalalpur, Greater Noida, Bisrakh Jalalpur, Uttar Pradesh 201306</p>
         </div>
         <div className="footer-section">
           <h3>Company</h3>
@@ -33,7 +42,7 @@ const Footer = () => {
             Learn more about Cograd and learn seamlessly through our mobile app.
             Download Now!
           </p>
-          <button className="download-button">Download on Google Play</button>
+          <button className="download-button" onClick={handleButtonClick}>Download on Google Play</button>
           <div className="social-media">
             <a href="https://www.facebook.com/cograd.in/" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
             <a href="https://x.com/cograd_in" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>

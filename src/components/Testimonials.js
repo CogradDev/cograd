@@ -64,33 +64,18 @@ const Testimonials = () => {
       <div className="container-full">
         <h2 className="title">Testimonials</h2>
         <div className="button-group">
-          <button
-            className={selectedCategory === "students" ? "active" : ""}
-            onClick={() => {
-              setSelectedCategory("students");
-              setCurrentIndex(0);
-            }}
-          >
-            Students
-          </button>
-          <button
-            className={selectedCategory === "teachers" ? "active" : ""}
-            onClick={() => {
-              setSelectedCategory("teachers");
-              setCurrentIndex(0);
-            }}
-          >
-            Teachers
-          </button>
-          <button
-            className={selectedCategory === "parents" ? "active" : ""}
-            onClick={() => {
-              setSelectedCategory("parents");
-              setCurrentIndex(0);
-            }}
-          >
-            Parents
-          </button>
+          {Object.keys(testimonialsData).map((category) => (
+            <button
+              key={category}
+              className={selectedCategory === category ? "active" : ""}
+              onClick={() => {
+                setSelectedCategory(category);
+                setCurrentIndex(0);
+              }}
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </button>
+          ))}
         </div>
         <div className="content">
           <div className="slider-container">

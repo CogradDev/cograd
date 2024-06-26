@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.scss";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
@@ -12,6 +12,9 @@ import off2 from "../assets/off2.webp";
 import off3 from "../assets/off3.webp";
 import off4 from "../assets/off1.webp";
 import off5 from "../assets/off1.webp";
+import aiImage from "../assets/off1.webp";
+import smartClassesImage from "../assets/off2.webp";
+import skillDevelopmentImage from "../assets/off3.webp";
 import Projects from "../components/Projects";
 import SuccessStories from "../components/SuccessStories";
 import Testimonials from "../components/Testimonials";
@@ -19,6 +22,10 @@ import AwardsCarousel from "../components/AwardsCarousel";
 import ctaImage from "../assets/image 13.webp"; // Adjust the path to your image
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
+import { CountUp } from "countup.js";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Home = () => {
   const [selectedOffering, setSelectedOffering] = useState("Cograd Schools");
@@ -39,8 +46,74 @@ const Home = () => {
       ],
     },
   };
+
+  const communityMembers = [
+    { id: 1, image: com1, alt: "Community Member 1" },
+    { id: 2, image: com2, alt: "Community Member 2" },
+    { id: 3, image: com3, alt: "Community Member 3" },
+    { id: 4, image: com4, alt: "Community Member 4" },
+    { id: 5, image: com1, alt: "Community Member 5" }, // Adding more images for carousel
+    { id: 6, image: com2, alt: "Community Member 6" },
+    { id: 7, image: com3, alt: "Community Member 7" },
+    { id: 8, image: com4, alt: "Community Member 8" },
+  ];
+
+
+  useEffect(() => {
+    const options = {
+      duration: 2, // duration in seconds
+      separator: ",", // thousands separator
+    };
+
+    const updateWithPlusSign = (id, value) => {
+      const countUp = new CountUp(id, value, options);
+      if (!countUp.error) {
+        countUp.start(() => {
+          document.getElementById(id).innerHTML += "+";
+        });
+      } else {
+        console.error(countUp.error);
+      }
+    };
+
+    updateWithPlusSign("workshops", 200);
+    updateWithPlusSign("students", 30000);
+    updateWithPlusSign("successStories", 2000);
+    updateWithPlusSign("schools", 25);
+  }, []);
+
   const handleClick = (offering) => {
     setSelectedOffering(offering);
+  };
+
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    arrow: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ]
+  };
+
+  const handleButtonClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSffTQsBZwZizYfSGFD0EBk0wswkqi1sgmr5AeOi_xVymPT80w/viewform?embedded=true",
+      "_blank"
+    );
   };
 
   return (
@@ -56,37 +129,56 @@ const Home = () => {
       <HeroSection />
 
       <section className="innovation">
-        <span>
-          How Are We Innovating with{" "}
-          <span style={{ color: "#FFE353" }}>Technology</span>?
-        </span>
-        <div className="features">
-          <div className="feature">
-            <h3>AI for Teachers</h3>
-            <p>
-              Our AI-powered tools assist teachers in creating personalized
-              lesson plans, grading assignments efficiently, and providing
-              real-time feedback to students. This allows teachers to focus more
-              on student engagement and less on administrative tasks.
-            </p>
-          </div>
-          <div className="feature special">
-            <h3>Smart classNamees</h3>
-            <p>
-              Equipped with the latest technology, our smart classNamerooms
-              facilitate interactive and immersive learning experiences. From
-              virtual reality field trips to digital whiteboards, we ensure that
-              every lesson is engaging and impactful.
-            </p>
-          </div>
-          <div className="feature">
-            <h3>Skill Development Programs</h3>
-            <p>
-              Our skill development programs are designed to prepare students
-              for the future workforce. We offer courses in coding, robotics,
-              and critical thinking, ensuring that students develop the skills
-              needed to thrive in a rapidly changing world.
-            </p>
+        <div className="container">
+          <span>
+            How Are We Innovating with{" "}
+            <span className="highlight">Technology</span>?
+          </span>
+          <div className="features">
+            <div className="feature">
+              <img
+                src={aiImage}
+                alt="AI for Teachers"
+                className="feature-image"
+              />
+              <div className="feature-content">
+                <h3>AI for Teachers</h3>
+                <p>
+                  Our AI-powered tools assist teachers in creating personalized
+                  lesson plans, grading assignments efficiently, and providing
+                  real-time feedback to students.
+                </p>
+              </div>
+            </div>
+            <div className="feature special">
+              <img
+                src={smartClassesImage}
+                alt="Smart Classes"
+                className="feature-image"
+              />
+              <div className="feature-content">
+                <h3>Smart Classes</h3>
+                <p>
+                  Equipped with the latest technology, our smart classrooms
+                  facilitate interactive and immersive learning experiences.
+                </p>
+              </div>
+            </div>
+            <div className="feature">
+              <img
+                src={skillDevelopmentImage}
+                alt="Skill Development Programs"
+                className="feature-image"
+              />
+              <div className="feature-content">
+                <h3>Skill Development Programs</h3>
+                <p>
+                  Our skill development programs prepare students for the future
+                  workforce with courses in coding, robotics, and critical
+                  thinking.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -97,41 +189,36 @@ const Home = () => {
         <h2>Impact</h2>
         <div className="matrics-container">
           <div className="metric">
-            <h3>200+</h3>
+            <h3 id="workshops">200+</h3>
             <p>Workshops Organized</p>
           </div>
           <div className="metric">
-            <h3>30,000+</h3>
+            <h3 id="students">30,000+</h3>
             <p>Students Impacted</p>
           </div>
           <div className="metric">
-            <h3>2000+</h3>
+            <h3 id="successStories">2000+</h3>
             <p>Success Stories</p>
           </div>
           <div className="metric">
-            <h3>25+</h3>
+            <h3 id="schools">25+</h3>
             <p>Schools Collaborated</p>
           </div>
         </div>
       </section>
 
       <section className="community">
-        <span>Our Community Members Come From</span>
-        <div className="offerings">
-          <div>
-            <img src={com1} alt="Community Member 1" className="offering-img" />
-          </div>
-          <div>
-            <img src={com2} alt="Community Member 2" className="offering-img" />
-          </div>
-          <div>
-            <img src={com3} alt="Community Member 3" className="offering-img" />
-          </div>
-          <div>
-            <img src={com4} alt="Community Member 4" className="offering-img" />
-          </div>
-        </div>
-      </section>
+      <span>Our Community Members Come From</span>
+      <div className="carousel-wrapper">
+        <Slider {...settings}>
+          {communityMembers.map((member) => (
+            <div key={member.id}>
+              <img src={member.image} alt={member.alt} className="carousel-img" />
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </section>
 
       <section className="key-offerings">
         <div className="key-offering-heading">
@@ -203,10 +290,13 @@ const Home = () => {
               personalized support, and tailored programs to enhance teaching,
               learning, and student outcomes.
             </p>
-            <button>Contact Us for Collaboration</button>
+            <button onClick={handleButtonClick}>
+              Contact Us for Collaboration
+            </button>
           </div>
         </div>
       </section>
+
       <Footer />
     </div>
   );

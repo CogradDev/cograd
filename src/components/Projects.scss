@@ -1,10 +1,10 @@
 .projects {
   background-color: white;
-
   padding: 30px;
   padding-bottom: 80px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   h2 {
     text-align: center;
@@ -14,83 +14,108 @@
   }
 
   .project-list {
-    display: flex;
-    justify-content: space-between;
-    gap: 60px;
-    overflow: hidden;
     width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
 
-    .project {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      border: 2px solid #0041e8;
-      border-radius: 20px;
-      width: 30%; /* Adjusted width for larger screens */
-      height: 400px;
-      padding: 20px;
-      margin: 10px 0;
+    .slick-slider {
+      position: relative;
+      display: block;
+      box-sizing: border-box;
+      user-select: none;
+      touch-action: pan-y;
+      -webkit-tap-highlight-color: transparent;
+      width: 97%;
 
-      .project-img {
-        width: 100%;
-        height: 60%; /* Ensure proper image scaling */
-        object-fit: cover;
-        border-radius: 10px 10px 0 0;
-      }
+      .slick-list {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0;
 
-      .project-details {
-        background-color: #fff;
-        border-radius: 0 0 10px 10px;
-        width: 100%;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        .slick-track {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          transition: transform 0.5s ease;
+          gap: 70px;
+          margin-right: 100px;
 
-        span {
-          font-size: 16px;
-          color: #555;
-          line-height: 1.5;
+          .project {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 2px solid #0041e8;
+            border-radius: 20px;
+            width: 30%; /* Adjusted width for larger screens */
+            height: 400px;
+            margin: 10px 0;
+height :100%;
+            padding-bottom: 20px;
+            padding-top: 20px;
+
+            .project-img {
+              width: 90%;
+              height: 60%; /* Ensure proper image scaling */
+              object-fit: cover;
+              border-radius: 10px;
+            }
+
+            .project-details {
+              background-color: #fff;
+              border-radius: 0 0 10px 10px;
+              width: 95%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              padding-top: 10px;
+        
+
+              span {
+                font-size: 16px;
+                color: #555;
+                line-height: 1.5;
+              }
+            }
+          }
         }
       }
     }
   }
 
-  .next-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #0041e8;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    align-self: flex-end;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #0031b8;
-    }
-  }
-
-  // @media (max-width: 1024px) {
-  //   .project-list {
-  //     .project {
-  //       width: 45%; /* Adjusted width for medium screens */
-  //     }
-  //   }
-  // }
-
   @media (max-width: 1024px) {
     .project-list {
-      flex-direction: column;
-      align-items: center; /* Center items on smaller screens */
 
-      .project {
-        width: 80%; /* Adjusted width for smaller screens */
-        max-width: 300px; /* Limit max width for consistency */
+      .slick-slider {
+        width: 100% !important;
+
+        .slick-list {
+
+
+          .slick-track {
+            gap: 30px;
+            margin-right: 0;
+            width: 100%;
+   
+            .project {
+              width: 100% !important; /* Adjusted width for smaller screens */
+              overflow: hidden;
+              margin-right: 30px;
+              .project-img{
+                height: 50%;
+                border-radius: 10px;
+              }
+            }
+          }
+        }
       }
     }
-
   }
 }
