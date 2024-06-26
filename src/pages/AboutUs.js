@@ -4,21 +4,23 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "./AboutUs.scss"; // Import the SCSS file
 
-import img1 from "../assets/aw1.webp";
-import img2 from "../assets/aw2.webp";
-import img3 from "../assets/aw3.webp";
-import img4 from "../assets/aw4.webp";
-import img5 from "../assets/aw5.webp";
-import img6 from "../assets/c1.webp";
-import img7 from "../assets/c2.webp";
-import img8 from "../assets/c3.webp";
-import img9 from "../assets/c4.webp";
-import img10 from "../assets/c5.webp";
-import img11 from "../assets/c6.webp";
-import img12 from "../assets/community-1.webp";
-import img13 from "../assets/community-2.webp";
-import img14 from "../assets/community-3.webp";
-import img15 from "../assets/community-4.webp";
+import mission from "../assets/mission.webp";
+import vission from "../assets/vission.jpg";
+import team from "../assets/our-team.webp";
+import innovation from "../assets/innovation.jpg";
+import integrity from "../assets/integrity.jpg";
+import excellence from "../assets/excellence.jpg";
+import himanshu from "../assets/himanshu.png";
+import saurabh from "../assets/saurabh.jpg";
+import j1 from "../assets/journey/j1.png";
+import j2 from "../assets/journey/j2.webp";
+import j3 from "../assets/journey/j3.webp";
+import j4 from "../assets/journey/j4.jpg";
+import j5 from "../assets/journey/j5.webp";
+import com1 from "../assets/partners/community-1.webp";
+import com2 from "../assets/partners/community-2.webp";
+import com3 from "../assets/partners/community-3.webp";
+import com4 from "../assets/partners/community-4.webp";
 import { FaLinkedin, FaLongArrowAltRight } from "react-icons/fa";
 
 import Slider from "react-slick";
@@ -26,9 +28,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const data = [
-  { innovativeText: "Innovation", image: img1 },
-  { innovativeText: "Integrity", image: img2 },
-  { innovativeText: "Excellence", image: img3 },
+  { innovativeText: "Innovation", image: innovation },
+  { innovativeText: "Integrity", image: integrity },
+  { innovativeText: "Excellence", image: excellence },
   // Add more values and corresponding images as needed
 ];
 
@@ -37,88 +39,84 @@ const data1 = [
     username: "Himanshu Chaurasia",
     description:
       "I had the vision to build amazing schools in India. I handle and guide the team as the executive",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/chaurasia-himanshu/",
     role: "Founder, CEO",
+    image: himanshu,
   },
   {
     username: "Saurabh Yadav",
     description:
       "I joined the Cograd team as COO at a very early age. I handle the operations side of Cograd",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/saurabh-yadav-8048a013b/",
     role: "Co-Founder, COO",
+    image: saurabh,
   },
 ];
 
 const partnerData = [
-  { partnerImg: img12 },
-  { partnerImg: img13 },
-  { partnerImg: img14 },
-  { partnerImg: img15 },
-  { partnerImg: img12 },
-  { partnerImg: img13 },
+  { partnerImg: com1 },
+  { partnerImg: com2 },
+  { partnerImg: com3 },
+  { partnerImg: com4 },
+  { partnerImg: com1 },
+  { partnerImg: com2 },
 ];
 
 const journeyData = [
   {
-    imgSrc: img7,
+    imgSrc: j1,
     title: "Step 1: Inception",
     description: "Our journey began with a vision to transform education.",
   },
   {
-    imgSrc: img8,
+    imgSrc: j2,
     title: "Step 2: First Milestone",
     description:
       "We reached our first milestone by launching our first school.",
   },
   {
-    imgSrc: img9,
+    imgSrc: j3,
     title: "Step 3: Growth",
     description: "Expanding our reach and impacting more lives.",
   },
   {
-    imgSrc: img10,
+    imgSrc: j4,
     title: "Step 4: Innovation",
     description: "Incorporating innovative teaching methods and technologies.",
   },
   {
-    imgSrc: img11,
+    imgSrc: j5,
     title: "Step 5: Future",
     description:
       "Continuing to strive for excellence and accessibility in education.",
   },
 ];
 
-const AboutUsGeanco = ({
-  username = "Himanshu Chaurasia",
-  description = (
-    <>
-      I had the vision to build amazing schools in India. I handle and guide the
-      team as
-      <br />
-      the executive
-    </>
-  ),
-  founderceo = "Founder, CEO",
-  ...props
-}) => {
+const AboutUsGeanco = ({ data }) => {
   return (
     <div className="aboutus-card">
       <div className="aboutus-card-inner">
         <div className="aboutus-card-image">
           <img
-            src={img1}
+            src={data.image}
             alt="secondaryimage"
             className="aboutus-card-image-img"
           />
         </div>
-        <span className="aboutus-card-heading">{username}</span>
-        <span className="aboutus-card-description">{description}</span>
+        <span className="aboutus-card-heading">{data.username}</span>
+        <span className="aboutus-card-description">{data.description}</span>
         <div className="aboutus-card-role-container">
           <div className="aboutus-card-role-inner">
-            <span className="aboutus-card-role">{founderceo}</span>
+            <span className="aboutus-card-role">{data.role}</span>
             <FaLongArrowAltRight className="aboutus-card-arrow" />
           </div>
-          <FaLinkedin className="aboutus-card-linkedin " />
+          <a
+            href={data.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="aboutus-card-linkedin " />
+          </a>
         </div>
       </div>
     </div>
@@ -128,7 +126,7 @@ const AboutUsGeanco = ({
 const settings = {
   dots: false,
   infinite: true,
-  arrow : false,
+  arrow: false,
   speed: 500,
   slidesToShow: 4, // Adjust the number of slides shown per screen
   slidesToScroll: 1,
@@ -141,7 +139,7 @@ const settings = {
         slidesToShow: 3,
       },
     },
-  ]
+  ],
 };
 
 const AboutUs = () => {
@@ -162,7 +160,7 @@ const AboutUs = () => {
               <div className="image-overlay">
                 <h1>Mission</h1>
               </div>
-              <img src={img4} alt="Mission" className="aboutus-hero-image" />
+              <img src={mission} alt="Mission" className="aboutus-hero-image" />
             </div>
             <div className="back">
               <p>
@@ -179,7 +177,11 @@ const AboutUs = () => {
                 <div className="image-overlay">
                   <h1>Vision</h1>
                 </div>
-                <img src={img4} alt="Vision" className="aboutus-hero-image" />
+                <img
+                  src={vission}
+                  alt="Vision"
+                  className="aboutus-hero-image"
+                />
               </div>
               <div className="back">
                 <p>
@@ -195,7 +197,7 @@ const AboutUs = () => {
                 <div className="image-overlay">
                   <h1>Our Team</h1>
                 </div>
-                <img src={img4} alt="Team" className="aboutus-hero-image" />
+                <img src={team} alt="Team" className="aboutus-hero-image" />
               </div>
               <div className="back">
                 <p>
@@ -238,7 +240,7 @@ const AboutUs = () => {
         <div className="aboutus-founders-list">
           <Suspense fallback={<div>Loading feed...</div>}>
             {data1.map((d, index) => (
-              <AboutUsGeanco {...d} key={"teamList" + index} />
+              <AboutUsGeanco data={d} key={"teamList" + index} />
             ))}
           </Suspense>
         </div>
@@ -246,17 +248,17 @@ const AboutUs = () => {
 
       {/* partners section */}
       <section className="aboutus-partners">
-      <h5 className="aboutus-partners-heading">Our Partners</h5>
-      <div className="carousel-wrapper">
-        <Slider {...settings}>
-          {partnerData.map((member) => (
-            <div key={member.id}>
-              <img src={member.partnerImg} alt="" className="carousel-img" />
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </section>
+        <h5 className="aboutus-partners-heading">Our Partners</h5>
+        <div className="carousel-wrapper">
+          <Slider {...settings}>
+            {partnerData.map((member) => (
+              <div key={member.id}>
+                <img src={member.partnerImg} alt="" className="carousel-img" />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </section>
 
       {/* journey section */}
       <div className="aboutus-journey">

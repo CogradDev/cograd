@@ -2,11 +2,11 @@ import { Helmet } from "react-helmet";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import React, { useState } from "react";
-import img1 from "../assets/aw1.webp";
-import img2 from "../assets/aw2.webp";
-import img3 from "../assets/aw3.webp";
-import img4 from "../assets/aw4.webp";
-import img5 from "../assets/aw5.webp";
+import img2 from "../assets/integrity.jpg";
+import img1 from "../assets/Our-projects/project1.webp";
+import img3 from "../assets/Our-projects/project3.jpg";
+import img4 from "../assets/key-offerings/school5.jpg";
+import img5 from "../assets/innovation/skill-development.jpg";
 import collab from "../assets/image 13.webp";
 import "./Services.scss";
 

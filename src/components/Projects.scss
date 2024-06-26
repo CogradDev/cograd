@@ -60,6 +60,11 @@
             padding-bottom: 20px;
             padding-top: 20px;
 
+            .project-title{
+              margin-top: 0;
+
+            }
+
             .project-img {
               width: 90%;
               height: 60%; /* Ensure proper image scaling */
@@ -104,6 +109,12 @@
               width: 100% !important; /* Adjusted width for smaller screens */
               overflow: hidden;
               margin-right: 30px;
+
+              
+            .project-title{
+             font-size: 16px;
+            }
+
               .project-img {
                 height: 50%;
                 border-radius: 10px;

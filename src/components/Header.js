@@ -37,7 +37,7 @@ const Header = () => {
           <a href="/" className={pathname === "/" ? "active" : ""}>Home</a>
           <a href="/about-us" className={pathname === "/about-us" ? "active" : ""}>About Us</a>
           <a href="/services" className={pathname === "/services" ? "active" : ""}>Services</a>
-          <a href="#resources" className={pathname === "#resources" ? "active" : ""}>Resources</a>
+          {/* <a href="#resources" className={pathname === "#resources" ? "active" : ""}>Resources</a> */}
         </nav>
         <div className="button-container">
           <a href="/contact-us" className="contact-button">
@@ -53,7 +53,7 @@ const Header = () => {
           <a href="/" onClick={toggleSidebar}>Home</a>
           <a href="/about-us" onClick={toggleSidebar}>About Us</a>
           <a href="/services" onClick={toggleSidebar}>Services</a>
-          <a href="#resources" onClick={toggleSidebar}>Resources</a>
+          {/* <a href="#resources" onClick={toggleSidebar}>Resources</a> */}
           <a href="/contact-us" onClick={toggleSidebar}>Contact Us</a>
         </div>
       </div>

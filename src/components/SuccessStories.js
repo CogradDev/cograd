@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./SuccessStories.scss";
-import off1 from "../assets/off1.webp";
-import off2 from "../assets/off2.webp";
-import off3 from "../assets/off3.webp";
-import child1 from "../assets/student.webp"; // Import child images
-import child2 from "../assets/teacher.webp";
-import child3 from "../assets/parent.webp";
+import off1 from "../assets/key-offerings/school1.jpg";
+import off2 from "../assets/key-offerings/school2.jpg";
+import off3 from "../assets/key-offerings/school3.jpg";
+import child1 from "../assets/success-stories/stu5.jpg"; // Import child images
+import child2 from "../assets/success-stories/stu2.jpg";
+import child3 from "../assets/success-stories/stu3.jpg";
 
 const SuccessStories = () => {
   const stories = [
