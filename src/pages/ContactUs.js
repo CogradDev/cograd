@@ -1,13 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ContactUs.scss";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
+import emailjs from 'emailjs-com';
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    how: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.send(
+      'service_jrqletn', // replace with your service ID
+      'template_0qzd398', // replace with your template ID
+      formData,
+      '-kwOtmMCiP771vJrb' // replace with your user ID
+    ).then((result) => {
+        alert('Email sent successfully!');
+      }, (error) => {
+        alert('Failed to send email.');
+      });
+  };
+
   return (
     <>
-       <Helmet>
+      <Helmet>
         <title>Contact Us - Cograd</title>
         <meta
           name="description"
@@ -26,20 +57,17 @@ const ContactUs = () => {
               We are here to assist you with any inquiries you may have. Please
               fill out the form below and we'll get back to you shortly.
             </p>
-            <form>
-              <input type="text" name="name" placeholder="Your Name" />
-              <input type="email" name="email" placeholder="Your Email" />
-              <input
-                type="text"
-                name="phone"
-                placeholder="Your Phone Number (optional)"
-              />
-              <select name="how">
+            <form onSubmit={handleSubmit}>
+              <input type="text" name="name" placeholder="Your Name" onChange={handleChange} />
+              <input type="email" name="email" placeholder="Your Email" onChange={handleChange} />
+              <input type="text" name="phone" placeholder="Your Phone Number (optional)" onChange={handleChange} />
+              <select name="how" onChange={handleChange}>
                 <option value="">How did you find us?</option>
                 <option value="google">Google</option>
                 <option value="social">Social Media</option>
                 <option value="friend">From a Friend</option>
               </select>
+              <textarea name="message" placeholder="Your Message" onChange={handleChange}></textarea>
               <button type="submit">SEND</button>
             </form>
             <div className="contact-info">

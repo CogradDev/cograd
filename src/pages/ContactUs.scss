@@ -67,6 +67,15 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+  .contact-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    height: 100px;
+  }
+  
   
   .contact-form button {
     background-color: #ffcc00;
