@@ -122,19 +122,21 @@
     .aboutus-hero {
       flex-direction: column !important;
       padding: 20px;
+      height: 900px;
+
 
       .aboutus-hero-image-1 {
         align-self: center;
         width: 100% !important;
         margin: 20px;
-        height: 30%;
+        height: 33%;
       }
 
       .aboutus-hero-secondary {
-        height: 70%;
         align-self: center;
         width: 100% !important;
         margin: 20px;
+        height: 66%;
         .aboutus-hero-image-2,
         .aboutus-hero-image-3 {
           width: 100% !important;
