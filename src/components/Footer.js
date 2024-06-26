@@ -20,7 +20,7 @@ const Footer = () => {
           <img src={logo} alt="Cograd Logo" className="footer-logo" />
           <p>Get In Touch</p>
           <p>Phone: +91-8917307407</p>
-          <p>Email: support@cograd.com</p>
+          <p>Email: connect@cograd.in</p>
           <p>Address: Cograd Tech Village, Bisrakh Jalalpur, Greater Noida, Bisrakh Jalalpur, Uttar Pradesh 201306</p>
         </div>
         <div className="footer-section">

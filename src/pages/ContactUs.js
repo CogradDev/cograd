@@ -51,7 +51,7 @@ const ContactUs = () => {
               <p>
                 <strong>EMAIL</strong>
                 <br />
-                info@cograd.com
+                connect@cograd.in
               </p>
             </div>
           </div>
