@@ -25,12 +25,19 @@ const ContactUs = () => {
     e.preventDefault();
 
     emailjs.send(
-      'service_jrqletn', // replace with your service ID
-      'template_0qzd398', // replace with your template ID
+      'service_wo4smcd', // replace with your service ID
+      'template_k0ifw7i', // replace with your template ID
       formData,
-      '-kwOtmMCiP771vJrb' // replace with your user ID
+      'n-n62XZBnXR0TXlQj' // replace with your user ID
     ).then((result) => {
         alert('Email sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          how: '',
+          message: ''
+        })
       }, (error) => {
         alert('Failed to send email.');
       });

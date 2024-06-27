@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Projects.scss";
 import com1 from "../assets/Our-projects/project1.webp";
 import com2 from "../assets/Our-projects/project2.webp";

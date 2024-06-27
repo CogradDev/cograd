@@ -270,7 +270,7 @@ const AboutUs = () => {
                 <div className="aboutus-journey-step" key={index}>
                   <img
                     src={journey.imgSrc}
-                    alt={`journey image ${index + 1}`}
+                    alt={`journey ${index + 1}`}
                     className="aboutus-journey-image"
                   />
                   <div className="aboutus-journey-text">
