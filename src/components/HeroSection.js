@@ -21,7 +21,7 @@ const HeroSection = () => {
     <div className="hero-section-container">
       <section className="hero">
         <h1>Engage . Enhance . Empower </h1>
-        <h2>Building next-generation schools for rural India</h2>
+        <h2>Building Next-generation affordable schools for Bharat</h2>
         <div className="cta-buttons">
           <button className="teach-with-ai">Teach with AI</button>
           <button className="watch-video">
