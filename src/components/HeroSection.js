@@ -21,29 +21,55 @@ const HeroSection = () => {
     <div className="hero-section-container">
       <section className="hero">
         <h1>Engage . Enhance . Empower </h1>
-        <h2>Building next-generation schools for rural India</h2>
+        <h2>Building Next-generation affordable schools for Bharat</h2>
         <div className="cta-buttons">
-          <button className="teach-with-ai">Teach with AI</button>
+          <button className="teach-with-ai">
+            <a
+              href="https://medha-frontend.vercel.app/"
+              target="_blank"
+              style={{ color: "black", textDecoration: "none" }}
+            >
+              Teach with AI
+            </a>
+          </button>
           <button className="watch-video">
-            <FaPlay style={{ marginRight: 10 }} /> Watch Video
+            <FaPlay style={{ marginRight: 10 }} />
+            <a
+              href="https://youtu.be/QtDKl6HDf2g"
+              target="_blank"
+              style={{ color: "black", textDecoration: "none" }}
+            >
+              Watch Video
+            </a>
           </button>
         </div>
-        
+
         <div className="statistics">
           <div className="outer-left" data-aos="fade-right">
             <div className="top-outer-left-box">
               <img src={bigFileHomeRightOpen} alt="" />
               <img src={Line7} alt="" className="line7" />
               <div>
-                <h2>4%</h2>
+                <h2>10%</h2>
                 <p>
-                  Only 4% students in rural schools have access to computers and
-                  AI.
+                  Only 10% students in rural schools have access to computers
+                  and AI.
                 </p>
               </div>
             </div>
             <div className="bottom-outer-left-box">
-              <p>Let them know AI!</p>
+              <a
+                href="https://blogs.cisco.com/csr/thingqbator-creating-an-education-ecosystem-to-nurture-innovation"
+                target="_blank"
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+              >
+                How we make Schools
+                <br /> Innovative?
+              </a>
             </div>
           </div>
 
@@ -51,7 +77,7 @@ const HeroSection = () => {
             <div className="inner-left" data-aos="fade-up">
               <img src={innerLeft} alt="" />
               <div>
-                <p>Engaging children through AI</p>
+                <p>Engaging children with Medha AI</p>
               </div>
             </div>
             <div className="inner-middle" data-aos="fade-up">
@@ -63,11 +89,10 @@ const HeroSection = () => {
                 <button className="teach-with-ai">Teach with VR</button>
               </div>
             </div>
-            <div className="inner-right" data-aos="fade-up">
+            <div className="inner-left" data-aos="fade-up">
               <img src={innerRight} alt="" />
               <div>
-                <p>AI Empowering individuals</p>
-                <button className="teach-with-ai">Teach with AI</button>
+                <p>Empowering Teachers with Medha AI</p>
               </div>
             </div>
           </div>
@@ -79,18 +104,30 @@ const HeroSection = () => {
               <div>
                 <h2>28%</h2>
                 <p>
-                  Only 4% students in rural schools have access to computers and
-                  AI.
+                 
+                  28% students of Middle School drops out due to lack of Quality
+                  Schools and Financial Constraints.<br/>
+                  <i style={{fontSize: 14}}>as per ASER, 2023</i>
                 </p>
               </div>
             </div>
             <div className="bottom-outer-right-box">
-              <p>Innovating Schools! Promoting digitalisation!</p>
+              <a
+                href="https://yourstory.com/hindi/this-startup-is-giving-hi-tech-education-to-children-in-villages-cograd"
+                target="_blank"
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+              >
+                How We make Schools <br />
+                Affordable?
+              </a>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   );
 };

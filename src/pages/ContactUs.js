@@ -30,7 +30,6 @@ const ContactUs = () => {
       formData,
       'n-n62XZBnXR0TXlQj' // replace with your user ID
     ).then((result) => {
-        alert('Email sent successfully!');
         setFormData({
           name: '',
           email: '',
@@ -38,6 +37,8 @@ const ContactUs = () => {
           how: '',
           message: ''
         })
+
+        alert('Email sent successfully!');
       }, (error) => {
         alert('Failed to send email.');
       });

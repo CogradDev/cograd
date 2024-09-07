@@ -8,7 +8,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
+import logo1 from "../assets/partners/community-1.webp"
 
 // Assuming you have imported project images
 const projectData = [
@@ -16,31 +16,77 @@ const projectData = [
     id: 1,
     image: com1,
     alt: "Project 1",
-    title: "Smart Classes Initiative",
+    title: "Nurture Programme",
     description:
-      "The Smart Classes initiative integrates modern technology into classrooms, providing students with interactive and engaging learning environments. Our goal is to transform traditional education and make learning more enjoyable.",
+      "The Nurture Program empowers rural students through hands-on learning in Emerging Technologies, personalized mentoring, and skill development to foster future-ready talent in Bharat.",
+    logo: logo1,
   },
   {
     id: 2,
-    image: com2,
+    image: com1,
     alt: "Project 2",
-    title: "Affordable Education Model",
+    title: "Adobe AI for All",
     description:
-      "We are renting 20,000 schools all over the country, offering a modern education curriculum at a very low cost. This new model of schooling aims to make quality education accessible to everyone.",
+      "At Adobe AI for All we designed Medha, that is an AI-powered platform to assist teachers in creating engaging, personalized learning experiences for every student in India.",
+    logo: logo1,
   },
   {
     id: 3,
-    image: com3,
+    image: com1,
     alt: "Project 3",
-    title: "AI for Teachers",
+    title: "PM SHRI Schools",
     description:
-      "Our AI for Teachers project leverages artificial intelligence to assist educators in creating personalized learning experiences for students. This project aims to enhance the quality of education and make teaching more efficient.",
+      "Cograd supports PM SHRI schools in creating model institutions by fostering quality education, promoting innovation, and encouraging holistic development for students across India.",
+    logo: logo1,
   },
-];
+  {
+    id: 4,
+    image: com1,
+    alt: "Project 4",
+    title: "Educational Officers Training",
+    description:
+      "Cograd's training for Block Education Officers (BEOs) in Uttarakhand enhances their skills in Generative AI, equipping them to implement innovative education strategies effectively.",
+    logo: logo1,
+  },
+  {
+    id: 5,
+    image: com1,
+    alt: "Project 5",
+    title: "Teachers Training",
+    description:
+      "Cograd's SCERT Teachers' Training equips educators with AI, coding, and emerging tech skills, enhancing classroom learning and empowering teachers across Uttarakhand.",
+    logo: logo1,
+  },
+  {
+    id: 6,
+    image: com1,
+    alt: "Project 6",
+    title: "Youth Skilling Programme",
+    description:
+      "The Nasscom Youth Skilling Program, in collaboration with Cograd, we trained 5000 young individuals in Data Science, AI, and emerging technologies, fostering future digital leaders.",
+    logo: logo1,
+  },
+  {
+    id: 7,
+    image: com1,
+    alt: "Project 7",
+    title: "Thingqubator Community Engagement",
+    description:
+      "We onboarded 20000+ students on Cisco Thingqubator portal within a span of month. Those students have lifetime free access to new gen tech courses.",
+    logo: logo1,
+  },
+  {
+    id: 8,
+    image: com1,
+    alt: "Project 8",
+    title: "AI Education ThinkTank",
+    description:
+      "AI Education ThinkTank 2024 at IIT Delhi was specially organised to solve education related problems through AI products and new gen tools.",
+    logo: logo1,
+  },
+];                                       
 
 const Projects = () => {
-
-
   const settings = {
     dots: false,
     infinite: true,
@@ -75,6 +121,10 @@ const Projects = () => {
               />
               <div className="project-details">
                 <span>{project.description}</span>
+              </div>
+              <div style={{display : "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-end"}}>
+                <span style={{fontStyle: "italic", color: "gray", marginRight: 10, marginTop: 10, fontSize: 14}}>In association with</span>
+                <img src={project.logo} alt="" style={{width: 80}}/>
               </div>
             </div>
           ))}

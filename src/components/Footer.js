@@ -19,9 +19,9 @@ const Footer = () => {
         <div className="footer-section contact-info">
           <img src={logo} alt="Cograd Logo" className="footer-logo" />
           <p>Get In Touch</p>
-          <p>Phone: +91-8917307407</p>
+          <p>Phone: 9580370547, 8077981379</p>
           <p>Email: connect@cograd.in</p>
-          <p>Address: Cograd Tech Village, Bisrakh Jalalpur, Greater Noida, Bisrakh Jalalpur, Uttar Pradesh 201306</p>
+          <p>Address: Cograd Tech Village, Sector-101, Noida Extension,<br/> Uttar Pradesh 201306</p>
         </div>
         <div className="footer-section">
           <h3>Company</h3>

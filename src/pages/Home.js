@@ -47,7 +47,7 @@ const Home = () => {
       images: [off6, off7, off8, off9, off10],
       description: [
         "Our Up-Skilling Programs are designed to equip individuals with the latest skills in various fields such as AI, data science, and digital marketing.",
-        "These programs are tailored to meet industry demands and help participants stay ahead in their careers.",
+        "We run tailored programmes for Teachers and Administrators as per NEP-2020 and NCF-2023.",
       ],
     },
   };
@@ -176,11 +176,10 @@ const Home = () => {
                 className="feature-image"
               />
               <div className="feature-content">
-                <h3>Skill Development Programs</h3>
+                <h3>Curriculum on Emerging Tech</h3>
                 <p>
-                  Our skill development programs prepare students for the future
-                  workforce with courses in coding, robotics, and critical
-                  thinking.
+                  Our Curriculum on Emerging Tech prepares students for the future
+                  workforce with 10+ Courses in Emerging Technologies.
                 </p>
               </div>
             </div>
@@ -213,7 +212,7 @@ const Home = () => {
       </section>
 
       <section className="community">
-      <span>Our Community Members Come From</span>
+      <span>We have worked with</span>
       <div className="carousel-wrapper">
         <Slider {...settings}>
           {communityMembers.map((member) => (
