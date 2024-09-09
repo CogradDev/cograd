@@ -3,7 +3,7 @@ import { FaPlay } from "react-icons/fa";
 import "./HeroSection.scss";
 import bigFileHomeRightOpen from "../assets/file-home-right-open.webp";
 import bigFileHomeLeftOpen from "../assets/file-home-left-open.webp";
-import innerMiddle from "../assets/inner-middle.webp";
+import innerMiddle from "../assets/middle.webp";
 import innerLeft from "../assets/inner-left.webp";
 import innerRight from "../assets/inner-right.webp";
 import Line7 from "../assets/svg/Line 7.svg";
@@ -77,7 +77,7 @@ const HeroSection = () => {
             <div className="inner-left" data-aos="fade-up">
               <img src={innerLeft} alt="" />
               <div>
-                <p>Engaging children with Medha AI</p>
+                <p>Engaging Students</p>
               </div>
             </div>
             <div className="inner-middle" data-aos="fade-up">
@@ -92,7 +92,7 @@ const HeroSection = () => {
             <div className="inner-left" data-aos="fade-up">
               <img src={innerRight} alt="" />
               <div>
-                <p>Empowering Teachers with Medha AI</p>
+                <p>Empowering Teachers</p>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ const HeroSection = () => {
                  
                   28% students of Middle School drops out due to lack of Quality
                   Schools and Financial Constraints.<br/>
-                  <i style={{fontSize: 14}}>as per ASER, 2023</i>
+                  <i style={{fontSize: "1.5vw"}} >as per ASER, 2023</i>
                 </p>
               </div>
             </div>

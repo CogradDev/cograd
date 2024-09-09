@@ -197,7 +197,12 @@
             font-size: 1.5vw; /* Use vw for font size */
             color: white;
             transition: transform 0.3s ease;
+
+      
           }
+
+
+
   
           &:hover h2,
           &:hover span {
@@ -216,7 +221,7 @@
         background-color: black;
         transition: background-color 0.3s ease, transform 0.3s ease;
   
-        p {
+        a {
           font-size: 1.5vw; /* Use vw for font size */
           color: white;
         }
@@ -263,7 +268,7 @@
   
           p {
             display: block;
-            font-size: 1.5vw; /* Use vw for font size */
+            font-size: 1.3vw; /* Use vw for font size */
             margin-bottom: 1vw; /* Use vw for margin */
           }
   

@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import "./Testimonials.scss";
-import student1 from "../assets/testimonials/stu4.webp";
-import student2 from "../assets/testimonials/stu3.webp";
-import teacher1 from "../assets/testimonials/teacher1.webp";
-import teacher2 from "../assets/testimonials/teacher2.webp";
-import parent from "../assets/testimonials/par1.webp";
+import student1 from "../assets/testimonials/student-1_11zon.webp";
+import student2 from "../assets/testimonials/student-2_11zon.webp";
+import teacher1 from "../assets/testimonials/teacher-1_11zon.webp";
+import teacher2 from "../assets/testimonials/teacher-2_11zon.webp";
+import parent1 from "../assets/testimonials/parent-1_11zon.webp";
+import parent2 from "../assets/testimonials/parent-2_11zon.webp";
+
 
 const testimonialsData = {
   students: [
     {
       id: 1,
-      name: "Ananya Sharma",
+      name: "Arpit Sikarwar",
       Image: student1,
       content:
         "Cograd has been instrumental in shaping my career path. Their personalized guidance and industry insights helped me secure a prestigious internship, setting me on the right track towards my professional goals.",
     },
     {
       id: 2,
-      name: "Amitabh Singh",
+      name: "Khushbu",
       Image: student2,
       content:
         "My experience with Cograd has been transformative. Their dedicated mentors and practical curriculum equipped me with the skills and confidence to excel in my chosen field.",
@@ -26,14 +28,14 @@ const testimonialsData = {
   teachers: [
     {
       id: 3,
-      name: "Radhika Patel",
+      name: "Saurabh Singh",
       Image: teacher2,
       content:
         "Cograd's innovative approach to education has rejuvenated my teaching journey. Their emphasis on interactive learning tools and continuous professional development has made me a more effective educator.",
     },
     {
       id: 4,
-      name: "Rohit Kumar",
+      name: "Seetu Yadav",
       Image: teacher1,
       content:
         "Cograd's support was invaluable in my transition to teaching abroad. Their global network and resources helped me navigate the complexities seamlessly, and I'm thriving in my new role.",
@@ -42,8 +44,15 @@ const testimonialsData = {
   parents: [
     {
       id: 5,
-      name: "Sneha Gupta",
-      Image: parent,
+      name: "Seelendra Singh",
+      Image: parent1,
+      content:
+        "Enrolling my child in Cograd's advanced courses was a game-changer. The personalized attention and hands-on learning approach significantly boosted my child's academic performance and confidence.",
+    },
+    {
+      id: 6,
+      name: "Saurabh Yadav",
+      Image: parent2,
       content:
         "Enrolling my child in Cograd's advanced courses was a game-changer. The personalized attention and hands-on learning approach significantly boosted my child's academic performance and confidence.",
     },

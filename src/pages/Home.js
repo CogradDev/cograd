@@ -3,23 +3,32 @@ import "./Home.scss";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import HomeSlickCarousel from "../components/HomeSlickCarousel";
-import com1 from "../assets/partners/community-1.webp";
+import com1 from "../assets/partners/l-adobe.webp";
 import com2 from "../assets/partners/community-2.webp";
-import com3 from "../assets/partners/community-3.webp";
-import com4 from "../assets/partners/community-4.webp";
-import off1 from "../assets/key-offerings/school1.webp";
-import off2 from "../assets/key-offerings/school2.webp";
-import off3 from "../assets/key-offerings/school3.webp";
-import off4 from "../assets/key-offerings/school4.webp";
-import off5 from "../assets/key-offerings/school5.webp";
-import off6 from "../assets/key-offerings/upskill1.webp";
-import off7 from "../assets/key-offerings/upskill2.webp";
-import off8 from "../assets/key-offerings/upskill3.webp";
-import off9 from "../assets/key-offerings/upskill4.webp";
-import off10 from "../assets/key-offerings/upskill5.webp";
+import com3 from "../assets/partners/l-nasscom.webp";
+import com4 from "../assets/partners/l-thingqbator.webp";
+import com5 from "../assets/partners/l-DoSW.webp";
+import com6 from "../assets/partners/l-dbse_11zon.webp";
+import com7 from "../assets/partners/l-fitt-iid_11zon.webp";
+import com8 from "../assets/partners/l-ihfc.webp";
+import com9 from "../assets/partners/l-jnv_11zon.webp";
+import com10 from "../assets/partners/l-pmshree_11zon.webp";
+import com11 from "../assets/partners/l-scert_11zon.webp";
+import com12 from "../assets/partners/l-siemt_11zon.webp";
+import com13 from "../assets/partners/l-ukEd.webp"
+import off1 from "../assets/key-offerings/cs-5.webp";
+import off2 from "../assets/key-offerings/cs-6.webp";
+import off3 from "../assets/key-offerings/cs-7.webp";
+import off4 from "../assets/key-offerings/cs-8.webp";
+import off5 from "../assets/key-offerings/cs-9.webp";
+import off6 from "../assets/key-offerings/su-1.webp";
+import off7 from "../assets/key-offerings/su-2.webp";
+import off8 from "../assets/key-offerings/su-3.webp";
+import off9 from "../assets/key-offerings/su-4.webp";
+import off10 from "../assets/key-offerings/su-5.webp";
 import aiImage from "../assets/innovation/ai-for-teachers.webp";
 import smartClassesImage from "../assets/innovation/smart-classes.webp";
-import skillDevelopmentImage from "../assets/innovation/skill-development.webp";
+import skillDevelopmentImage from "../assets/innovation/collab-emerging-tech_11zon.webp";
 import Projects from "../components/Projects";
 import SuccessStories from "../components/SuccessStories";
 import Testimonials from "../components/Testimonials";
@@ -53,14 +62,11 @@ const Home = () => {
   };
 
   const communityMembers = [
-    { id: 1, image: com1, alt: "Community Member 1" },
-    { id: 2, image: com2, alt: "Community Member 2" },
-    { id: 3, image: com3, alt: "Community Member 3" },
-    { id: 4, image: com4, alt: "Community Member 4" },
-    { id: 5, image: com1, alt: "Community Member 5" }, // Adding more images for carousel
-    { id: 6, image: com2, alt: "Community Member 6" },
-    { id: 7, image: com3, alt: "Community Member 7" },
-    { id: 8, image: com4, alt: "Community Member 8" },
+    { id: 1, image: com5, alt: "Community Member 1" },
+    { id: 2, image: com6, alt: "Community Member 2" },
+    { id: 3, image: com9, alt: "Community Member 3" },
+    { id: 4, image: com13, alt: "Community Member 4" },
+
   ];
 
 

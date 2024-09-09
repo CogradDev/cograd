@@ -3,8 +3,8 @@ import "./SuccessStories.scss";
 import off1 from "../assets/key-offerings/school1.webp";
 import off2 from "../assets/key-offerings/school2.webp";
 import off3 from "../assets/key-offerings/school3.webp";
-import child1 from "../assets/success-stories/stu5.webp"; // Import child images
-import child2 from "../assets/success-stories/stu2.webp";
+import child1 from "../assets/success-stories/ats-archana.webp"; // Import child images
+import child2 from "../assets/success-stories/aman.webp";
 import child3 from "../assets/success-stories/stu3.webp";
 
 const SuccessStories = () => {

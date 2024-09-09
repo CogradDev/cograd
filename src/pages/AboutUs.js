@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "./AboutUs.scss"; // Import the SCSS file
 
-import mission from "../assets/mission.webp";
-import vission from "../assets/vission.webp";
+import mission from "../assets/about-us/mission_11zon.webp";
+import vission from "../assets/about-us/vision_11zon.webp";
 import team from "../assets/our-team.webp";
 import innovation from "../assets/innovation.webp";
 import integrity from "../assets/integrity.webp";
@@ -17,10 +17,14 @@ import j2 from "../assets/journey/j2.webp";
 import j3 from "../assets/journey/j3.webp";
 import j4 from "../assets/journey/j4.webp";
 import j5 from "../assets/journey/j5.webp";
-import com1 from "../assets/partners/community-1.webp";
-import com2 from "../assets/partners/community-2.webp";
-import com3 from "../assets/partners/community-3.webp";
-import com4 from "../assets/partners/community-4.webp";
+import com1 from "../assets/partners/as1.webp";
+import com2 from "../assets/partners/as2.webp";
+import com3 from "../assets/partners/as3.webp";
+import com4 from "../assets/partners/as4.webp";
+import com5 from "../assets/partners/as5.webp";
+import com6 from "../assets/partners/as6.webp";
+import media from "../assets/media_11zon.webp";
+import mobileMedia from "../assets/mobileMedia_11zon.webp";
 import { FaLinkedin, FaLongArrowAltRight } from "react-icons/fa";
 
 import Slider from "react-slick";
@@ -58,8 +62,8 @@ const partnerData = [
   { partnerImg: com2 },
   { partnerImg: com3 },
   { partnerImg: com4 },
-  { partnerImg: com1 },
-  { partnerImg: com2 },
+  { partnerImg: com5 },
+  { partnerImg: com6 },
 ];
 
 const journeyData = [
@@ -110,11 +114,7 @@ const AboutUsGeanco = ({ data }) => {
             <span className="aboutus-card-role">{data.role}</span>
             <FaLongArrowAltRight className="aboutus-card-arrow" />
           </div>
-          <a
-            href={data.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={data.linkedin} target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="aboutus-card-linkedin " />
           </a>
         </div>
@@ -217,17 +217,9 @@ const AboutUs = () => {
           <Suspense fallback={<div>Loading feed...</div>}>
             {data.map((d, index) => (
               <div key={`featuresList${index}`} className="aboutus-values-item">
-                <div className="values-flip-card-inner">
                   <div className="values-front">
                     <h1 className="aboutus-values-text">{d.innovativeText}</h1>
                   </div>
-                  <div
-                    className="values-back"
-                    style={{ backgroundImage: `url(${d.image})` }}
-                  >
-                    {/* Image background set dynamically */}
-                  </div>
-                </div>
               </div>
             ))}
           </Suspense>
@@ -248,7 +240,7 @@ const AboutUs = () => {
 
       {/* partners section */}
       <section className="aboutus-partners">
-        <h5 className="aboutus-partners-heading">Our Partners</h5>
+        <h5 className="aboutus-partners-heading">Our Associations</h5>
         <div className="carousel-wrapper">
           <Slider {...settings}>
             {partnerData.map((member) => (
@@ -282,6 +274,58 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Social Presence section */}
+      <div className="social-presence">
+        <h4 className="aboutus-founders-heading">Our Social Presence</h4>
+
+        {/* Embedding YouTube Videos */}
+        <div className="aboutus-founders-list">
+          <iframe
+            src="https://www.youtube.com/embed/xP6glTTCXKk"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+
+          <iframe
+            src="https://www.youtube.com/embed/jZAr0WVOsGI"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+
+          <iframe
+            src="https://www.youtube.com/embed/RLCRm3QvMm0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+
+          <iframe
+            src="https://www.youtube.com/embed/Qh8ip-3QHTk"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+
+        {/* Adding an Image below */}
+        <img
+          src={media} // Desktop image
+          alt="Social presence image"
+          className="social-presence-image desktop-image"
+        />
+        <img
+          src={mobileMedia} // Mobile image
+          alt="Social presence image"
+          className="social-presence-image mobile-image"
+        />
       </div>
 
       <Footer />

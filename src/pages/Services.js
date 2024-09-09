@@ -2,44 +2,51 @@ import { Helmet } from "react-helmet";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import React, { useState } from "react";
-import img2 from "../assets/integrity.webp";
-import img1 from "../assets/Our-projects/project1.webp";
-import img3 from "../assets/Our-projects/project3.webp";
-import img4 from "../assets/key-offerings/school5.webp";
-import img5 from "../assets/innovation/skill-development.webp";
+import img1 from "../assets/services/cograd-school_11zon.webp";
+import img2 from "../assets/services/school5.webp";
+import img3 from "../assets/services/Dream lab_11zon.webp";
+import img4 from "../assets/services/digitalised-school_11zon.webp";
+import img5 from "../assets/services/capacity-building_11zon.webp";
+import img6 from "../assets/services/content-curriculum_11zon.webp";
 import collab from "../assets/image 13.webp";
 import "./Services.scss";
 
 const servicesList = [
   {
-    name: "School Upgradation",
+    name: "Cograd School",
     description:
-      "Enhance your school’s infrastructure and facilities with our comprehensive school upgradation services. We provide tailored solutions to modernize classrooms, labs, and administrative areas, ensuring a conducive environment for learning and growth.",
+      "Upgrade your school to Cograd School where we provide end-to-end solutions for schools, including curriculum development, teacher training, and AI integration. It empowers educational institutions to adopt innovative technologies, improve teaching standards, and create impactful learning experiences for students in rural and urban areas.",
     image: img1,
   },
   {
-    name: "Smart Classes",
+    name: "Medha AI Based Smart Classes",
     description:
-      "Transform traditional classrooms into interactive learning spaces with our smart classes solutions. Utilizing cutting-edge technology, we enhance engagement and comprehension through multimedia content, collaborative tools, and real-time assessments.",
+      "Medha AI Based Smart Classes, a service of Cograd, is revolutionizing education by integrating AI-driven tools into classrooms, enhancing teaching methods, personalized learning, and efficient classroom management, ensuring quality education access for students and empowering teachers.",
     image: img2,
   },
   {
-    name: "Smart Labs / Dream Lab",
+    name: "Dream Labs",
     description:
-      "Introduce innovation into education with our smart labs and dream lab programs. Students engage in hands-on experiments, simulations, and project-based learning, fostering creativity, critical thinking, and problem-solving skills.",
+      "Dream Labs, a Cograd initiative, brings New Gen Technology Labs to schools, offering hands-on learning in AI, robotics, coding, and more. These labs foster innovation, creativity, and practical skills, empowering students to excel in emerging technologies and future careers.",
     image: img3,
   },
   {
     name: "Digitalising Schools",
     description:
-      "Digitally transform your educational institution with our digitalization services. From administrative processes to curriculum delivery, we streamline operations, improve access to resources, and enhance overall efficiency.",
+      "Digitally transform your educational institution with our digitalization services. From administrative processes to curriculum delivery, we streamline operations, improve access to resources, and enhance overall efficiency through AI powered LMS and ERP software.",
     image: img4,
   },
   {
-    name: "Personalized Learning Paths",
+    name: "Capacity Building",
     description:
-      "Empower every student with personalized learning paths tailored to their unique needs and learning styles. Through adaptive technologies and data-driven insights, we optimize learning outcomes and student success.",
+      "Cograd’s Capacity Building service for teachers aligns with the National Curriculum Framework 2023 (NCF) and National Education Policy 2020 (NEP). It focuses on upskilling educators in innovative pedagogies, emerging technologies, and AI tools, fostering inclusive, future-ready education in schools across India.",
     image: img5,
+  },
+  {
+    name: "Content & Curriculum",
+    description:
+      "Cograd’s Content & Curriculum Development service for schools aligns with NCF and NEP guidelines, offering customized, future-ready learning materials. It integrates emerging technologies, critical thinking, and 21st-century skills to foster holistic development, inclusivity, and innovation in education.",
+    image: img6,
   },
 ];
 

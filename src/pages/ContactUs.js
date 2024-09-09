@@ -82,7 +82,7 @@ const ContactUs = () => {
               <p>
                 <strong>PHONE</strong>
                 <br />
-                +91 8917307407
+                +91-9580370547,+91-8077981379
               </p>
               <p>
                 <strong>EMAIL</strong>
