@@ -40,6 +40,7 @@ const ContactUs = () => {
 
         alert('Email sent successfully!');
       }, (error) => {
+        console.log(error)
         alert('Failed to send email.');
       });
   };
