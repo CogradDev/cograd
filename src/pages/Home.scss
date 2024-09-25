@@ -447,14 +447,18 @@
       }
 
       .key-offering-contents {
+        display: flex;
+      flex-direction: column;
         padding-top: 50px;
-        flex-direction: row-reverse;
+        // flex-direction: row-reverse;
         overflow: hidden;
 
         .circle-container {
           width: 60%;
           height: 200px;
-          left: 35px;
+          // left: 35px;
+          right:10px;
+          margin-bottom: 20px;
 
           .offering-img {
             width: 80px;
