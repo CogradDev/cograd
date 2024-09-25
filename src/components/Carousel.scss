@@ -1,63 +1,114 @@
-// body {
-// 	align-items: center;
-// 	background: #E3E3E3;
-// 	display: flex;
-// 	height: 100vh;
-// 	justify-content: center;
-// }
+// Body styling
+body {
+  align-items: center;
+  background: #e3e3e3; // Light gray background
+  display: flex;
+  height: 100vh; // Full height of the viewport
+  justify-content: center; // Center content horizontally
+  margin: 0; // Remove default margin
+}
 
+// Mixin for white gradient background
 @mixin white-gradient {
-	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
-$animationSpeed: 40s;
+$animationSpeed: 40s; // Animation speed variable
 
-// Animation
+// Animation for scrolling
 @keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 7))}
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
 }
 
+// Main slider styling
+.carousel-container {
+  background: white; // White background for the carousel
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1); // Soft shadow for depth
+  border-radius: 10px; // Rounded corners
+  overflow: hidden; // Hide overflow to show one slide at a time
+  position: relative; // Position for absolute children
+  width: 960px; // Fixed width
+  max-width: 100%; // Ensure it is responsive
+  transition: all 0.3s ease; // Smooth transition for hover effects
+}
 
-// Styling
-.slider {
-	background: white;
-	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-	height: 100px;
-	margin: auto;
-	overflow:hidden;
-	position: relative;
-	width: 960px;
-	
-	&::before,
-	&::after {
-		@include white-gradient;
-		content: "";
-		height: 100px;
-		position: absolute;
-		width: 200px;
-		z-index: 2;
-	}
-	
-	&::after {
-		right: 0;
-		top: 0;
-		transform: rotateZ(180deg);
-	}
+// Slide styling
+.slide {
+  display: flex; // Flexbox for layout
+  height: 100px; // Fixed height
+  padding: 20px; // Padding around the content
+  align-items: center; // Center content vertically
+  transition: transform 0.5s ease; // Smooth slide transition
+}
 
-	&::before {
-		left: 0;
-		top: 0;
-	}
-	
-	.slide-track {
-		animation: scroll $animationSpeed linear infinite;
-		display: flex;
-		width: calc(250px * 14);
-	}
-	
-	.slide {
-		height: 100px;
-		width: 250px;
-	}
+// Left side of the slide
+.left {
+  flex: 1; // Take equal space
+  display: flex;
+  flex-direction: column; // Stack items vertically
+  justify-content: center; // Center content vertically
+  color: #333; // Dark text for better readability
+
+  .number {
+    font-size: 2em; // Larger font for the percentage
+    font-weight: bold; // Bold text
+    color: #4a90e2; // Blue color for the number
+  }
+
+  .text {
+    font-size: 1em; // Regular font size for text
+    margin-top: 5px; // Space between number and text
+  }
+}
+
+// Right side of the slide
+.right {
+  flex: 1; // Take equal space
+  display: flex;
+  flex-direction: column; // Stack title and image
+  justify-content: center; // Center content vertically
+  text-align: left; // Align text to the left
+
+  .top {
+    font-size: 1.5em; // Slightly larger font for title
+    font-weight: bold; // Bold title
+    color: #333; // Dark text
+    margin-bottom: 5px; // Space between title and subtitle
+
+    .is {
+      font-size: 1.5em;
+      font-weight: bold;
+      align-items: center;
+    }
+  }
+
+  .bottom {
+    img {
+      max-width: 100%; // Responsive image
+      height: auto; // Maintain aspect ratio
+      border-radius: 8px; // Rounded image corners
+    }
+  }
+}
+
+// Animation for sliding
+.slide-track {
+  animation: scroll $animationSpeed linear infinite; // Infinite scroll animation
+  display: flex; // Flexbox for sliding effect
+  width: calc(250px * 14); // Width of the track
+}
+
+// Optional hover effects for the slides
+.slide:hover {
+  transform: scale(1.05); // Scale up on hover for emphasis
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.2); // Stronger shadow on hover
 }
