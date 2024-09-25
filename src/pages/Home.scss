@@ -447,8 +447,10 @@
       }
 
       .key-offering-contents {
+        display: flex;
+      flex-direction: column;
         padding-top: 50px;
-        flex-direction: row-reverse;
+        // flex-direction: row-reverse;
         overflow: hidden;
 
         .circle-container {

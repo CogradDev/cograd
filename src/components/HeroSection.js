@@ -20,8 +20,14 @@ const HeroSection = () => {
   return (
     <div className="hero-section-container">
       <section className="hero">
-        <h1>Engage . Enhance . Empower </h1>
-        <h2>Building Next-generation affordable schools for Bharat</h2>
+        {/* <h1>Engage . Enhance . Empower </h1> */}
+        <div className="headings">
+        <div className="heading"> Engage .</div>
+        <div className="heading">Enhance .</div>
+        <div className="heading">Empower .</div>
+        </div>
+
+        <h2>Building Next-generation affordable schools for rural INDIA</h2>
         <div className="cta-buttons">
           <button className="teach-with-ai">
             <a
