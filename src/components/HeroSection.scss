@@ -4,7 +4,39 @@
 
   .hero {
     padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+
+    .headings{
+      display: flex;
+      justify-content: center;
+      align-items: none;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+    .heading{
+      display: flex;
+      padding-left: 10px;
+      font-size: 50px; /* Relative font size for responsiveness */
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+      font-family: "Arial Black", sans-serif;
+      animation-delay: 0.2s;
+
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    .statistics {
+      padding: 8vw 0; /* Use vw for padding */
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;}
+    
 
     h1,
     h2 {
@@ -92,6 +124,7 @@
       transform: translateY(0);
     }
   }
+  
 
   /* Media queries for responsiveness */
   @media screen and (max-width: 1024px) {
@@ -110,11 +143,30 @@
       border-radius: 3vw; /* Adjusted border radius for smaller screens */
       font-size: 2vw; /* Adjusted font size for smaller screens */
     }
+   
   }
 
   @media screen and (max-width: 1024px) {
+    .headings{
+      display: flex;
+      flex-direction: column;
+    }
+    .heading{
+      font-size: 100000vw; /* Relative font size for responsiveness */
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+      font-family: "Arial Black", sans-serif;
+      animation-delay: 0.2s;
+
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+      font-weight: 500;
+    }
    .hero{
-      padding-top: 50px !important;
+      // padding-top: 50px !important;
+      margin-bottom: 50px;
     }
     .hero h1 {
       font-size: 6vw; /* Further adjusted font size for smaller screens */
@@ -131,11 +183,16 @@
       border-radius: 4vw; /* Further adjusted border radius for smaller screens */
       font-size: 2.5vw; /* Further adjusted font size for smaller screens */
     }
+    .hero .statistics {
+      padding: 8vw 0; /* Use vw for padding */
+      display: none;
+      flex-direction: row;
+      align-items: flex-end;}
   }
 
   .statistics {
     padding: 8vw 0; /* Use vw for padding */
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: flex-end;
     

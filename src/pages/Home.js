@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Ai from "../components/Ai";
+ import Carousel from "../components/Carousel";
 import "./Home.scss";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
@@ -137,7 +139,11 @@ const Home = () => {
         />
       </Helmet>
       <Header />
+      {/* <Carousel/> */}
       <HeroSection />
+      <div className="carousel">
+      <Carousel/></div>
+      {/* <Ai/> */}
 
       <section className="innovation">
         <div className="container">

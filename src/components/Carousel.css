@@ -1,0 +1,204 @@
+
+/* .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .slide-container {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+  } */
+  
+  /* .slide.active {
+    opacity: 1;
+    visibility: visible;
+  } */
+  
+  /* img {
+    width: 100%;
+    height: auto;
+  } */
+  
+  /* .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  } */
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto auto auto ;
+    overflow: hidden;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 400px; */
+    margin-top: 50px;
+  }
+  
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .carousel-control.prev {
+    left: 10px;
+  }
+  
+  .carousel-control.next {
+    right: 10px;
+  }
+  
+  
+.slide{
+    width: 100%;
+    aspect-ratio: 2 / 1; /* Ensures height equals width */
+    background-color: yellow;
+    display: flex;
+}
+.left{
+    padding-top: 50px;
+    width: 50%;
+    height: 75%;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    clip-path: polygon(0 0, 50% 0, 60% 30%, 100% 30%,100% 100%,0 100% ); /* Trapezium shape with left side straight */
+    border: 2px solid transparent; /* Optional: for visibility */
+}
+.number{
+    /* margin-top: 10px; */
+    margin-bottom: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-weight:600;
+    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); Drop shadow */
+
+}
+.text{
+    padding-left: 5px;
+    width:80%;
+    color: whitesmoke;
+    font-weight:500
+    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); Drop shadow */
+
+}
+.right{
+    width: 50%;
+    height: 100%;
+    background-color:yellow ;
+    display: flex;
+    flex-direction: column;
+}
+
+.top{
+    width: 100%;
+    height:30%;
+    background-color: yellow;
+    font-weight:500;
+    color:black;
+    position: relative; /* Necessary for transform to work */
+    transform: translateX(-20px); /* Move 20 pixels to the left */
+
+}
+.is{
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    position: relative; /* Necessary for transform to work */
+    transform: translateX(+10px);
+    margin-bottom: 0;
+}
+.bottom{
+    width:100%;
+    height: 70%;
+    background-color: 161616;
+}
+.bottom img {
+    width: 100%;
+    height: 105%;
+    object-fit: fill;  /* Ensures the image fills the box and maintains aspect ratio */
+  }
+
+.slide1{
+    width:100%;
+    background-color: black;
+    aspect-ratio: 2/1;
+    display: flex;
+}
+.left1{
+    width:50%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+.top1{
+    width:100%;
+    height:80%;
+    background-color: red;
+}
+ .top1 img  {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;  /* Ensures the image fills the box and maintains aspect ratio */
+  
+  }
+.right1{
+    width:50%;
+    height:100%;
+    background-color: blue;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%,20% 80%,0 80% ); 
+    border: 2px solid transparent; 
+   
+    
+}
+.text1{
+    width: 80%;
+    padding-top: 10%;
+    color: white;
+    font-size: 1.2rem;          /* Adjusts the font size for readability */
+    line-height: 1.5;           /* Adds line spacing to improve text readability */
+               /* Horizontally centers the text box */
+    font-family: Arial, sans-serif;
+}
+.bottom1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    margin-top: 10px;
+}
