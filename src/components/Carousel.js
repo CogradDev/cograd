@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // import "./Carousel.scss";
 import "./Carousel.css";
@@ -6,11 +6,45 @@ import innerMiddle from "../assets/middle.webp";
 import innerLeft from "../assets/inner-left.webp";
 import innerRight from "../assets/inner-right.webp";
 import Ai from "./Ai"
+import {Slide1,Slide2,Slide3} from "./Slides"
 
-const Carousel=()=>{
-return (
-    <>
-	<div>
+const Carousel = () => {
+  const slides = [<Slide1 />, <Slide2 />, <Slide3 />]; // Array of slide components
+  const [currentSlide, setCurrentSlide] = useState(0); // State for current slide
+
+  // Function to go to the next slide
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+  };
+
+  // Function to go to the previous slide
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === 0 ? slides.length - 1 : prevSlide - 1
+    );
+  };
+
+  // Automatically cycle through slides
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000); // Change slide every 3 seconds
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+  return (
+    <div className="carousel-container">
+    
+
+      <div className="carousel-slide">{slides[currentSlide]}</div>
+
+      
+    </div>
+  );
+};
+
+export default Carousel;
+{/* <div>
     <div class="slide">
         <div class="left">
             <div class="number">10%</div>
@@ -24,7 +58,7 @@ return (
             Promoting digitalisation!
             </div>
             <div class="bottom">
-				{/* <img src={innerLeft} /> */}
+				<img src={innerLeft} />
 			</div>
         </div>
 		</div>
@@ -33,7 +67,7 @@ return (
 	<div class="slide1">
 		<div class="left1">
             <div class="top1">
-				{/* <img src={innerMiddle}/> */}
+				<img src={innerMiddle}/>
 			</div>
 			<div class="bottom1">Teach with AR</div>
         </div>
@@ -58,13 +92,13 @@ return (
             Promoting digitalisation!
             </div>
             <div class="bottom">
-				{/* <img src={innerRight} /> */}
+				<img src={innerRight} />
 			</div>
 
         </div>
 		</div>
 		<Ai/>
-    </div>
+    </div> */}
 {/* <div class="slider">
 	<div class="slide-track">
 		<div class="slide">
@@ -111,9 +145,6 @@ return (
 		</div>
 	</div>
 </div> */}
-</>
-)}
-export default Carousel;
 // import React, { useState } from "react";
 // import "./Carousel.css";
 // import innerMiddle from "../assets/middle.webp";

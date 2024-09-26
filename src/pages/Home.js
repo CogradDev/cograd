@@ -141,7 +141,8 @@ const Home = () => {
       <Header />
       {/* <Carousel/> */}
       <HeroSection />
-      <Carousel/>
+      <div className="carousel">
+      <Carousel/></div>
       {/* <Ai/> */}
 
       <section className="innovation">

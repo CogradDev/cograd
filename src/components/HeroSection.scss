@@ -31,6 +31,11 @@
       transform: translateY(20px);
       animation: fadeInUp 1s ease forwards;
     }
+    .statistics {
+      padding: 8vw 0; /* Use vw for padding */
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;}
     
 
     h1,
@@ -138,6 +143,7 @@
       border-radius: 3vw; /* Adjusted border radius for smaller screens */
       font-size: 2vw; /* Adjusted font size for smaller screens */
     }
+   
   }
 
   @media screen and (max-width: 1024px) {
@@ -160,6 +166,7 @@
     }
    .hero{
       // padding-top: 50px !important;
+      margin-bottom: 50px;
     }
     .hero h1 {
       font-size: 6vw; /* Further adjusted font size for smaller screens */
@@ -176,11 +183,16 @@
       border-radius: 4vw; /* Further adjusted border radius for smaller screens */
       font-size: 2.5vw; /* Further adjusted font size for smaller screens */
     }
+    .hero .statistics {
+      padding: 8vw 0; /* Use vw for padding */
+      display: none;
+      flex-direction: row;
+      align-items: flex-end;}
   }
 
   .statistics {
     padding: 8vw 0; /* Use vw for padding */
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: flex-end;
     

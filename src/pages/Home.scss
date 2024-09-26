@@ -69,6 +69,7 @@
         .special {
           border: 1px solid #ffe353;
         }
+        
       }
     }
 
@@ -427,6 +428,7 @@
   }
 
   @media (max-width: 1024px) {
+    
     .key-offerings {
       margin-top: 50px;
 
@@ -684,3 +686,11 @@
     }
   }
 }
+.carousel {
+  display: none; // Hide carousel by default
+
+  @media (max-width: 1024px) {
+    display: block; // Show carousel when the screen width is 1024px or less
+  }
+}
+
