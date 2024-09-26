@@ -56,7 +56,7 @@ export const Slide3 = () => {
         <div class="left">
           <div class="number">28%</div>
           <div class="text">
-            28% students of Middle School drops out due to lack of Quality
+            28% students  drops out due to lack of Quality
             Schools and Financial Constraints. as per ASER, 2023{" "}
           </div>
         </div>
