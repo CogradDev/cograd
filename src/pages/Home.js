@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Ai from "../components/Ai";
- import Carousel from "../components/Carousel";
+import Carousel from "../components/Carousel";
 import "./Home.scss";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
@@ -17,7 +17,7 @@ import com9 from "../assets/partners/l-jnv_11zon.webp";
 import com10 from "../assets/partners/l-pmshree_11zon.webp";
 import com11 from "../assets/partners/l-scert_11zon.webp";
 import com12 from "../assets/partners/l-siemt_11zon.webp";
-import com13 from "../assets/partners/l-ukEd.webp"
+import com13 from "../assets/partners/l-ukEd.webp";
 import off1 from "../assets/key-offerings/cs-5.webp";
 import off2 from "../assets/key-offerings/cs-6.webp";
 import off3 from "../assets/key-offerings/cs-7.webp";
@@ -39,9 +39,9 @@ import ctaImage from "../assets/image 13.webp"; // Adjust the path to your image
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
 import { CountUp } from "countup.js";
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
   const [selectedOffering, setSelectedOffering] = useState("Cograd Schools");
@@ -68,9 +68,7 @@ const Home = () => {
     { id: 2, image: com6, alt: "Community Member 2" },
     { id: 3, image: com9, alt: "Community Member 3" },
     { id: 4, image: com13, alt: "Community Member 4" },
-
   ];
-
 
   useEffect(() => {
     const options = {
@@ -99,7 +97,6 @@ const Home = () => {
     setSelectedOffering(offering);
   };
 
-
   const settings = {
     dots: false,
     infinite: true,
@@ -119,7 +116,7 @@ const Home = () => {
           dots: true,
         },
       },
-    ]
+    ],
   };
 
   const handleButtonClick = () => {
@@ -141,7 +138,7 @@ const Home = () => {
       <Header />
       {/* <Carousel/> */}
       <HeroSection />
-      <Carousel/>
+      <Carousel />
       {/* <Ai/> */}
 
       <section className="innovation">
@@ -189,8 +186,8 @@ const Home = () => {
               <div className="feature-content">
                 <h3>Curriculum on Emerging Tech</h3>
                 <p>
-                  Our Curriculum on Emerging Tech prepares students for the future
-                  workforce with 10+ Courses in Emerging Technologies.
+                  Our Curriculum on Emerging Tech prepares students for the
+                  future workforce with 10+ Courses in Emerging Technologies.
                 </p>
               </div>
             </div>
@@ -223,17 +220,21 @@ const Home = () => {
       </section>
 
       <section className="community">
-      <span>We have worked with</span>
-      <div className="carousel-wrapper">
-        <Slider {...settings}>
-          {communityMembers.map((member) => (
-            <div key={member.id}>
-              <img src={member.image} alt={member.alt} className="carousel-img" />
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </section>
+        <span>We have worked with</span>
+        <div className="carousel-wrapper">
+          <Slider {...settings}>
+            {communityMembers.map((member) => (
+              <div key={member.id}>
+                <img
+                  src={member.image}
+                  alt={member.alt}
+                  className="carousel-img"
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </section>
 
       <section className="key-offerings">
         <div className="key-offering-heading">
@@ -305,9 +306,7 @@ const Home = () => {
               personalized support, and tailored programs to enhance teaching,
               learning, and student outcomes.
             </p>
-            <button onClick={handleButtonClick}>
-              Contact Us for Collaboration
-            </button>
+            <button onClick={handleButtonClick}>Call to Collaborate</button>
           </div>
         </div>
       </section>

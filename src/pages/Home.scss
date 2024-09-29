@@ -178,7 +178,6 @@
     }
   }
 
-  
   .community {
     background-color: white;
     border-radius: 20px;
@@ -191,7 +190,7 @@
     margin-top: -40px; // Adjusted for responsiveness
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-  
+
     span {
       font-size: 1.6rem;
       font-weight: bold;
@@ -201,12 +200,12 @@
       width: 100%;
       padding: 0 20px;
     }
-  
+
     .carousel-wrapper {
       width: 100%;
       overflow: hidden;
       border-radius: 10px;
-  
+
       .slick-slider {
         position: relative;
         display: block;
@@ -215,14 +214,14 @@
         touch-action: pan-y;
         -webkit-tap-highlight-color: transparent;
         width: 100%;
-  
+
         .slick-list {
           position: relative;
           display: block;
           overflow: hidden;
           margin: 0;
           padding: 0;
-  
+
           .slick-track {
             display: flex;
             align-items: center;
@@ -231,7 +230,7 @@
             margin: 0;
             padding: 0;
             transition: transform 0.5s ease;
-  
+
             .slick-slide {
               display: flex;
               justify-content: center;
@@ -240,11 +239,11 @@
               padding: 0 10px;
               opacity: 1;
               transition: opacity 0.5s ease;
-  
+
               img {
                 max-width: 70%;
                 height: auto;
-                border-radius: 10px;  
+                border-radius: 10px;
                 &:hover {
                   transform: translateY(-5px);
                 }
@@ -255,16 +254,15 @@
       }
     }
 
-  
     @media (max-width: 1024px) {
       width: 80%; // Adjusted for smallest screens
       padding: 10px; // Adjusted for smallest screens
-  
+
       span {
         font-size: 1.4rem; // Adjusted for smallest screens
         margin-bottom: 20px; // Adjusted for smallest screens
       }
-  
+
       .carousel-wrapper {
         .slick-slider {
           .slick-slide {
@@ -276,7 +274,6 @@
       }
     }
   }
-  
 
   .key-offerings {
     display: flex;
@@ -448,7 +445,7 @@
 
       .key-offering-contents {
         display: flex;
-      flex-direction: column;
+        flex-direction: column;
         padding-top: 50px;
         // flex-direction: row-reverse;
         overflow: hidden;
@@ -457,7 +454,7 @@
           width: 60%;
           height: 200px;
           // left: 35px;
-          right:10px;
+          right: 10px;
           margin-bottom: 20px;
 
           .offering-img {
@@ -576,110 +573,134 @@
       border: none;
       background: #007bff;
       color: white;
-      border-radius: 5px;
       margin-top: 20px;
     }
   }
-
   .collaboration-cta {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem 2rem;
-    /* Reduce padding for smaller screens */
-    background-color: #0041e8; // Blue background
-    border-radius: 10px;
+    padding: 0.5rem 1rem; /* Reduced overall padding */
+    background-color: white;
 
     .cta-content {
       display: flex;
       flex-direction: column;
-      /* Adjust for smaller screens */
       align-items: center;
       background-color: #ffffff;
-      padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      max-width: 800px;
+      max-width: 100%;
       width: 100%;
+      border: 1.5px solid black;
+      padding: 1rem; /* Add some internal padding for spacing */
     }
 
     .cta-image {
-      width: 100%;
-      max-width: 400px;
+      width: 100%; /* Full width */
+      max-width: 1000px; /* Adjusted for larger screens */
+      height: auto;
 
-      /* Adjust max-width for smaller screens */
       img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
+        width: 100%; /* Ensure image fills container */
+        height: auto; /* Maintain aspect ratio */
         border-radius: 10px;
       }
     }
 
     .cta-text {
       width: 100%;
-      padding: 0;
-      /* Adjust padding for smaller screens */
-      text-align: center;
-      /* Center align text for smaller screens */
+      padding: 0; /* Remove any extra padding */
+      margin-top: 0.5rem; /* Slightly reduce the margin top */
 
       h2 {
-        font-size: 1.5rem;
-        /* Adjust font size for smaller screens */
+        font-size: clamp(1.25rem, 5vw, 2.25rem); /* Decreased font size */
+        font-weight: bold;
         color: #000;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem; /* Reduce margin bottom */
+        text-align: center;
+        white-space: normal;
+        word-wrap: break-word;
       }
 
       p {
-        font-size: 1rem;
-        /* Adjust font size for smaller screens */
-        color: #666;
-        margin-bottom: 1.5rem;
+        font-size: 0.5rem;
+        color: #333;
+        margin-bottom: 0.5rem; /* Reduce gap */
+        line-height: 1.4;
+        padding: 0;
       }
 
       button {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-        /* Adjust font size for smaller screens */
+        padding: 0.5rem; /* Adjusted button padding */
+        font-size: 0.8rem; /* Font size for the button */
         color: black;
-        font-weight: bold;
-        background-color: #ffcc00; // Yellow button
+        font-weight: normal;
+        background-color: #ffe478;
         border: 1px solid black;
         border-radius: 20px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        white-space: nowrap;
+        transition: background-color 0.3s ease, transform 0.2s ease;
 
         &:hover {
-          background-color: #e6b800; // Darker yellow on hover
+          background-color: #e6b800;
+          transform: scale(1.05);
         }
       }
     }
 
-    @media (min-width: 1024px) {
-      padding: 8rem;
-      /* Restore padding for larger screens */
-
+    /* Responsive Adjustments */
+    @media (max-width: 767px) {
       .cta-content {
         flex-direction: row;
-        /* Revert to row layout for larger screens */
-        padding: 2rem;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem; /* Decrease padding for mobile */
       }
 
       .cta-image {
-        max-width: 50%;
+        width: 60%; /* Mobile image size */
+        margin-right: 0.5rem; /* Reduce margin */
+      }
 
-        /* Adjust image width for larger screens */
-        img {
-          max-width: 100%;
-        }
+      .cta-text {
+        width: 40%;
+        padding: 0 0.5rem; /* Reduce padding */
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .cta-content {
+        flex-direction: row;
+        padding: 2rem; /* Reduce padding for tablets */
+      }
+
+      .cta-image {
+        width: 70%; /* Image size for tablet */
       }
 
       .cta-text {
         width: 50%;
-        /* Adjust text width for larger screens */
-        padding: 0 2rem;
-        text-align: left;
-        /* Align text to left for larger screens */
+        padding: 0 1rem; /* Adjust padding */
+      }
+    }
+
+    @media (min-width: 1024px) {
+      padding: 4rem; /* Reduce overall padding for larger screens */
+
+      .cta-content {
+        flex-direction: row;
+        padding: 1rem; /* Adjust padding */
+      }
+
+      .cta-image {
+        width: 80%; /* Image size for larger screens */
+      }
+
+      .cta-text {
+        width: 50%;
+        padding: 0 1rem; /* Adjust padding */
       }
     }
   }
