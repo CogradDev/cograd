@@ -1,6 +1,6 @@
 .awards {
   text-align: center;
-  padding: 50px 0;
+  padding: 20px 0;
   background-color: #dbd5d5;
 
   h2 {
@@ -15,13 +15,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 
     img {
       border-radius: 10px;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       cursor: pointer;
       height: 160px; // Default height for non-active slides
-      width: 220px;  // Default width for non-active slides
+      width: 220px; // Default width for non-active slides
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); // Adding shadow to images
     }
 
@@ -30,7 +31,8 @@
       transition: transform 0.5s ease-in-out;
 
       &:nth-child(1), // First image
-      &:nth-child(5) { // Last image
+      &:nth-child(5) {
+        // Last image
         img {
           height: 100px; // Decreased height for the first and last images
         }
@@ -43,7 +45,7 @@
 
       img {
         height: 350px; // Increased height for the active slide
-        width: 250px;  // Increased width for the active slide
+        width: 250px; // Increased width for the active slide
       }
     }
 
