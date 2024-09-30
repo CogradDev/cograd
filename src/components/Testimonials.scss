@@ -31,9 +31,10 @@
       cursor: pointer;
       font-weight: bold;
       transition: color 0.3s ease, background-color 0.3s ease;
+      color: gray; /* Default color for unselected buttons */
 
       &.active {
-        color: #000; /* Change text color to black when active */
+        color: black; /* Change text color to black when active */
       }
 
       &:hover {
@@ -136,9 +137,10 @@
       margin-bottom: 15px;
 
       button {
-        font-size: 16px;
+        font-size: 1.25rem;
         padding: 6px 12px;
-        font-style: normal;
+        font-style: initial;
+        font-weight: lighter;
       }
     }
 
