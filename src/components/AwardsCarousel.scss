@@ -20,18 +20,27 @@
       border-radius: 10px;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       cursor: pointer;
-      height: 150px; // Default height for non-active slides
-      width: 200px;  // Default width for non-active slides
+      height: 160px; // Default height for non-active slides
+      width: 220px;  // Default width for non-active slides
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); // Adding shadow to images
     }
 
     &.swiper-slide {
-      transform: scale(0.8); // Smaller size for non-active slides
+      transform: scale(0.6); // Smaller size for non-active slides
       transition: transform 0.5s ease-in-out;
+
+      &:nth-child(1), // First image
+      &:nth-child(5) { // Last image
+        img {
+          height: 100px; // Decreased height for the first and last images
+        }
+      }
     }
 
     &.swiper-slide-active {
       transform: scale(1.1); // Slightly larger for the active slide
       transition: transform 0.5s ease-in-out;
+
       img {
         height: 350px; // Increased height for the active slide
         width: 250px;  // Increased width for the active slide
