@@ -1,49 +1,48 @@
 .testimonials {
-  background-color: white;
-  padding: 50px 0;
+  background-color: #dbd5d5;
+  padding: 30px 0;
 
   .container-full {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px 20px;
     text-align: center;
   }
 
   .title {
-    font-size: 36px;
-    color: #0041e8;
-    margin-bottom: 40px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: blue;
   }
 
   .button-group {
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     button {
-      color: #333;
       border: none;
       background-color: transparent;
       border-radius: 8px;
-      padding: 10px 20px;
-      font-size: 16px;
-      margin: 0 10px;
+      padding: 6px 12px; /* Slightly larger padding */
+      font-size: 28px; /* Increased font size */
+      margin: 0 8px;
       cursor: pointer;
       font-weight: bold;
+      transition: color 0.3s ease, background-color 0.3s ease;
 
       &.active {
-        color: #fff;
-        background-color: #0041e8;
+        color: #000; /* Change text color to black when active */
       }
 
       &:hover {
-        color: #fff;
-        background-color: #0041e8;
         transform: scale(1.05);
       }
 
       &:focus {
-        outline: none;
+        outline: none; /* Remove blue focus outline */
+        box-shadow: none; /* Ensure no shadow on focus */
       }
     }
   }
@@ -55,197 +54,135 @@
     width: 100%;
 
     .slider-container {
-      width: 100%;
-      background-color: white;
-      border-radius: 16px; /* Increased border radius for a smoother look */
-      padding: 30px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
-      margin-bottom: 20px;
-      text-align: left;
+      position: relative;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      transition: transform 0.3s ease; /* Smooth transition for hover effect */
+      width: 100%;
+      height: 250px;
+      overflow: visible;
 
-      &:hover {
-        transform: translateY(-5px); /* Lift card on hover for a subtle effect */
-      }
+      .image-wrapper {
+        position: relative;
+        margin-right: -30px;
+        transition: transform 0.5s ease-in-out, box-shadow 0.5s ease;
+        z-index: 1;
+        cursor: pointer;
 
-      .slider-card .card-box {
-        display: flex;
-
-        .image {
-          width: 200px;
-          height: 200px; /* Circular image size */
-          border-radius: 50%;
-          border: 2px solid #0041e8;
-          overflow: hidden;
-          margin-right: 20px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for image */
-
-          img {
-            width: auto;
-            height: 100%; /* Maintain aspect ratio */
-            object-fit: cover;
-          }
+        &:nth-child(1) img {
+          width: 210px;
+          height: 150px;
+          border-radius: 12px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
-        .content-row {
-          padding-left: 40px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          width: 70%;
+        &:nth-child(2) img {
+          width: 180px;
+          height: 130px;
+          border-radius: 12px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
 
-          .details {
-            .name {
-              font-size: 24px;
-              font-weight: bold;
-              color: #333;
-              margin-bottom: 10px;
-            }
-          }
+        &:nth-child(n + 3) img {
+          width: 160px;
+          height: 120px;
+          border-radius: 12px;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
 
-          .content {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.5;
-            margin-bottom: 20px;
-          }
+        &:hover {
+          transform: scale(1.15);
+          z-index: 10;
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        &.active {
+          z-index: 20;
         }
       }
     }
 
-    .navigation-container {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      width: 100%;
+    .details {
+      margin-top: 15px;
+      text-align: center;
+      max-width: 500px;
 
-      .pagination-nav {
-        display: flex;
-        justify-content: center;
-        margin-right: 20px;
-
-        a {
-          display: inline-block;
-          margin: 0 5px;
-          padding: 5px 10px;
-          color: #007bff;
-          background: #e9ecef;
-          border-radius: 4px;
-          transition: background 0.3s;
-
-          &.active,
-          &:hover {
-            background: #0041e8;
-            color: #fff;
-          }
-        }
-      }
-
-      .next-story-button {
-        padding: 12px 30px;
-        background-color: #0041e8;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #fff;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-
-        &:hover {
-          background-color: #0056b3;
-          transform: scale(1.05);
+      .detail-content {
+        h3 {
+          font-size: 22px;
+          color: #0041e8;
+          margin-bottom: 8px;
         }
 
-        &:focus {
-          outline: none;
+        p {
+          font-size: 14px;
+          color: #555;
+          line-height: 1.4;
         }
       }
     }
   }
 
-  @media (max-width: 1024px) {
-  
-    .button-group {
-      width: 80%;
-      margin-left: 30px;
-    }
-    
-    .title {
-      font-size: 26px !important;
-  
-    }
-    .content {
-  
-      .slider-container {
-        width: 80% !important;
-  
-        .slider-card .card-box {
-          display: flex;
-          flex-direction: column !important;
-          align-items: center;
-  
-          .image {
-            width: 200px;
-            height: 200px; /* Circular image size */
-            margin-bottom: 20px;
-  
-            img {
-              width: 80%;
-              object-fit: cover;
-            }
-          }
-  
-          .content-row {
-            padding-left: 0px !important;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100% !important;
-  
-            .details {
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    padding: 20px 0;
 
-              .name {
-                font-size: 24px;
-                font-weight: bold;
-                color: #333;
-                margin-bottom: 10px;
-              }
-            }
-  
-            .content {
-              font-size: 16px;
-              color: #555;
-              line-height: 1.5;
-              margin-bottom: 20px;
-            }
+    .title {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+    }
+
+    .button-group {
+      margin-bottom: 15px;
+
+      button {
+        font-size: 16px;
+        padding: 6px 12px;
+        font-style: normal;
+      }
+    }
+
+    .content {
+      .slider-container {
+        height: 160px;
+
+        .image-wrapper {
+          margin-right: -25px;
+
+          &:nth-child(1) img {
+            width: 160px;
+            height: 130px;
+            border-radius: 12px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+          }
+
+          &:nth-child(2) img {
+            width: 180px;
+            height: 160px;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+          }
+
+          &:nth-child(n + 3) img {
+            width: 130px;
+            height: 100px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
           }
         }
       }
 
-    }
+      .details {
+        .detail-content {
+          h3 {
+            font-size: 20px;
+          }
 
-    .next-story-button {
-      margin-top: 20px;
-    }
-
-    /* Differentiate sections for small devices */
-    .students .slider-container {
-      background-color: #f9fafb; /* Light blue background for students section */
-    }
-
-    .teachers .slider-container {
-      background-color: #f9f9f9; /* Light gray background for teachers section */
-    }
-
-    .parents .slider-container {
-      background-color: #fdf1f1; /* Light pink background for parents section */
+          p {
+            font-size: 13px;
+          }
+        }
+      }
     }
   }
 }

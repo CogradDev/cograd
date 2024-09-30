@@ -7,20 +7,19 @@ import teacher2 from "../assets/testimonials/teacher-2_11zon.webp";
 import parent1 from "../assets/testimonials/parent-1_11zon.webp";
 import parent2 from "../assets/testimonials/parent-2_11zon.webp";
 
-
 const testimonialsData = {
   students: [
     {
       id: 1,
       name: "Arpit Sikarwar",
-      Image: student1,
+      image: student1,
       content:
         "Cograd has been instrumental in shaping my career path. Their personalized guidance and industry insights helped me secure a prestigious internship, setting me on the right track towards my professional goals.",
     },
     {
       id: 2,
       name: "Khushbu",
-      Image: student2,
+      image: student2,
       content:
         "My experience with Cograd has been transformative. Their dedicated mentors and practical curriculum equipped me with the skills and confidence to excel in my chosen field.",
     },
@@ -29,14 +28,14 @@ const testimonialsData = {
     {
       id: 3,
       name: "Saurabh Singh",
-      Image: teacher2,
+      image: teacher1,
       content:
         "Cograd's innovative approach to education has rejuvenated my teaching journey. Their emphasis on interactive learning tools and continuous professional development has made me a more effective educator.",
     },
     {
       id: 4,
       name: "Seetu Yadav",
-      Image: teacher1,
+      image: teacher2,
       content:
         "Cograd's support was invaluable in my transition to teaching abroad. Their global network and resources helped me navigate the complexities seamlessly, and I'm thriving in my new role.",
     },
@@ -45,14 +44,14 @@ const testimonialsData = {
     {
       id: 5,
       name: "Seelendra Singh",
-      Image: parent1,
+      image: parent1,
       content:
         "Enrolling my child in Cograd's advanced courses was a game-changer. The personalized attention and hands-on learning approach significantly boosted my child's academic performance and confidence.",
     },
     {
       id: 6,
       name: "Saurabh Yadav",
-      Image: parent2,
+      image: parent2,
       content:
         "Enrolling my child in Cograd's advanced courses was a game-changer. The personalized attention and hands-on learning approach significantly boosted my child's academic performance and confidence.",
     },
@@ -60,14 +59,8 @@ const testimonialsData = {
 };
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("students");
-
-  const nextTestimonial = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % testimonialsData[selectedCategory].length
-    );
-  };
+  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
 
   return (
     <div className="testimonials">
@@ -80,7 +73,7 @@ const Testimonials = () => {
               className={selectedCategory === category ? "active" : ""}
               onClick={() => {
                 setSelectedCategory(category);
-                setCurrentIndex(0);
+                setSelectedTestimonial(null); // Reset selected testimonial on category change
               }}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -89,46 +82,33 @@ const Testimonials = () => {
         </div>
         <div className="content">
           <div className="slider-container">
-            <div className="slider-card">
-              <div className="card-box">
-                <div className="image">
-                  <img src={testimonialsData[selectedCategory][currentIndex].Image} alt="Child" />
-                </div>
-                <div className="content-row">
-                  <div className="details">
-                    <div className="name">
-                      <strong>
-                        {testimonialsData[selectedCategory][currentIndex].name}
-                      </strong>
-                    </div>
-                  </div>
-                  <div className="content">
-                    <p>
-                      {testimonialsData[selectedCategory][currentIndex].content}
-                    </p>
-                  </div>
-                </div>
+            {testimonialsData[selectedCategory].map((testimonial, index) => (
+              <div
+                className={`image-wrapper ${
+                  selectedTestimonial === testimonial.id ? "active" : ""
+                }`}
+                key={testimonial.id}
+                onClick={() => setSelectedTestimonial(testimonial.id)}
+              >
+                <img src={testimonial.image} alt={testimonial.name} />
               </div>
-            </div>
-            <div className="navigation-container">
-              <div className="pagination-nav">
-                {testimonialsData[selectedCategory].map(
-                  (testimonial, index) => (
-                    <a
-                      key={testimonial.id}
-                      href={`#testi_slide${testimonial.id}`}
-                      className={index === currentIndex ? "active" : ""}
-                    >
-                      {index + 1}
-                    </a>
-                  )
-                )}
-              </div>
-              <button className="next-story-button" onClick={nextTestimonial}>
-                Next Story
-              </button>
-            </div>
+            ))}
           </div>
+          {selectedTestimonial && (
+            <div className="details">
+              {testimonialsData[selectedCategory].map((testimonial) => {
+                if (testimonial.id === selectedTestimonial) {
+                  return (
+                    <div className="detail-content" key={testimonial.id}>
+                      <h3>{testimonial.name}</h3>
+                      <p>{testimonial.content}</p>
+                    </div>
+                  );
+                }
+                return null;
+              })}
+            </div>
+          )}
         </div>
       </div>
     </div>
