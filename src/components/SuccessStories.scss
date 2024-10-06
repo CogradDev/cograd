@@ -5,7 +5,7 @@
   height: 400px;
   background-size: cover;
   background-position: center;
-  color: white;
+  color: black; // Changed to black for contrast
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   margin-bottom: 80px;
@@ -20,19 +20,19 @@
     justify-content: space-between;
     height: 100%;
     width: 100%;
+    padding: 20px; // Added padding for better spacing
 
     .student-name {
       width: 20%;
-      padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
 
       .child-image {
-        width: 200px; /* Adjust size of child image */
+        width: 200px;
         height: 200px;
-        border-radius: 50%; /* Make it circular */
+        border-radius: 50%;
         object-fit: cover;
         margin-bottom: 10px;
         border: 10px solid white;
@@ -43,7 +43,7 @@
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 0;
-        color: #ffcc00;
+        color: #ffcc00; // Keep this color for the student name
         align-self: center;
         text-align: center;
       }
@@ -59,32 +59,37 @@
         line-height: 1.6;
         text-align: left;
         font-weight: bold;
+        color: white; // Keep the text white
       }
     }
+  }
 
-    .next-story-button {
-      width: 20%;
-      margin: 20px;
-      align-self: flex-end;
-      padding: 10px 20px;
-      background-color: #ffe353;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #333;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s ease, transform 0.3s ease;
+  .next-story-button {
+    position: absolute; // Absolute positioning for the arrow button
+    bottom: 20px; // Space from the bottom
+    right: 20px; // Space from the right
+    width: 50px; // Fixed size for the button
+    height: 50px;
+    background-color: #ffe353; // Button background color
+    border: none;
+    border-radius: 50%; // Make it circular
+    font-size: 24px; // Size of the arrow
+    font-weight: bold;
+    color: #333; // Color of the arrow
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 
-      &:hover {
-        background-color: #ffcc00;
-        transform: scale(1.05);
-      }
+    &:hover {
+      background-color: #ffcc00; // Change color on hover
+      transform: scale(1.1); // Slightly enlarge on hover
+    }
 
-      &:focus {
-        outline: none;
-      }
+    &:focus {
+      outline: none; // Remove outline on focus
     }
   }
 
