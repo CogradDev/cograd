@@ -118,7 +118,8 @@
     color: whitesmoke;
     font-weight:400;
     font-family: 'Montserrat', sans-serif;
-      font-size: 12px;   /* Font size of 12px */
+      font-size: 15px;   /* Font size of 12px */
+      line-height: 1.5;
 
     /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); Drop shadow */
 
@@ -204,8 +205,10 @@
     line-height: 1.5;           /* Adds line spacing to improve text readability */
                /* Horizontally centers the text box */
     font-family: 'Montserrat', sans-serif;
+   
+
     
-    font-size: 12px;
+    font-size: 15px;
 }
 .bottom1{
     display: flex;
