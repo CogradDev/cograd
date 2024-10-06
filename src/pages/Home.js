@@ -198,7 +198,7 @@ const Home = () => {
       {/* <HomeSlickCarousel /> */}
 
       <section className="impact-metrics">
-        <h2>Impact</h2>
+        <h2>Impact we have created</h2>
         <div className="matrics-container">
           <div className="metric">
             <h3 id="workshops">200+</h3>
@@ -220,7 +220,7 @@ const Home = () => {
       </section>
 
       <section className="community">
-        <span>We have worked with</span>
+        <span>Our Community members come from</span>
         <div className="carousel-wrapper">
           <Slider {...settings}>
             {communityMembers.map((member) => (
