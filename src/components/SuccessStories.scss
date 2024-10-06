@@ -1,126 +1,178 @@
 .success-story {
   position: relative;
-  align-self: center;
-  width: 80%;
-  height: 400px;
+  width: 90%;
+  height: auto;
+  background-color: white; // Set the default background color to white
   background-size: cover;
   background-position: center;
-  color: black; // Changed to black for contrast
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin-bottom: 80px;
-  margin-top: 20px;
+  color: black;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  margin: 40px auto; // Adjusted to center on the page and have better spacing
+  padding: 0; // Removed padding from the main container
+  overflow: hidden;
   transition: background-image 0.5s ease-in-out;
 
   .story-content {
+    position: relative;
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 8px;
+    border-radius: 16px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     height: 100%;
     width: 100%;
-    padding: 20px; // Added padding for better spacing
+    padding: 20px; // Added padding to ensure spacing inside the story content
+    gap: 20px; // Added gap for spacing between elements
+    box-sizing: border-box;
 
     .student-name {
-      width: 20%;
+      width: 25%;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start; // Aligned to the left for desktop
       justify-content: center;
 
       .child-image {
-        width: 200px;
-        height: 200px;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 10px;
-        border: 10px solid white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        border: 8px solid white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       }
 
       h3 {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
-        margin-bottom: 0;
-        color: #ffcc00; // Keep this color for the student name
-        align-self: center;
-        text-align: center;
+        margin: 5px 0;
+        color: #ffcc00;
+        text-align: left; // Aligned text to the left
       }
     }
 
     .story {
-      width: 60%;
-      padding: 20px;
+      width: 70%;
+      padding: 10px;
       align-self: center;
 
       p {
-        font-size: 20px;
-        line-height: 1.6;
+        font-size: 22px; // Increased font size for better readability
+        line-height: 1.8;
         text-align: left;
         font-weight: bold;
-        color: white; // Keep the text white
+        color: white;
       }
     }
   }
 
   .next-story-button {
-    position: absolute; // Absolute positioning for the arrow button
-    bottom: 20px; // Space from the bottom
-    right: 20px; // Space from the right
-    width: 50px; // Fixed size for the button
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
     height: 50px;
-    background-color: #ffe353; // Button background color
+    background-color: #ffe353;
     border: none;
-    border-radius: 50%; // Make it circular
-    font-size: 24px; // Size of the arrow
+    border-radius: 50%;
+    font-size: 24px;
     font-weight: bold;
-    color: #333; // Color of the arrow
+    color: #333;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, transform 0.3s ease;
 
     &:hover {
-      background-color: #ffcc00; // Change color on hover
-      transform: scale(1.1); // Slightly enlarge on hover
+      background-color: #ffcc00;
+      transform: scale(1.1);
     }
 
     &:focus {
-      outline: none; // Remove outline on focus
+      outline: none;
     }
   }
 
-  // Responsive styles for small devices
-  @media (max-width: 1024px) {
-    width: 90%;
-    height: auto;
+  // Responsive styles for smaller devices
+  @media (max-width: 768px) {
+    width: 80%;
+    margin: 20px auto;
 
     .story-content {
-      width: 100% !important;
-      flex-direction: column !important;
-      align-items: center !important;
+      flex-direction: column;
+      align-items: flex-start; // Stack content vertically and align to the left
+      text-align: left;
+      padding: 15px; // Add padding to prevent content from touching screen edges
 
       .student-name {
-        width: 90%;
-        padding: 10px;
-        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+        align-items: flex-start;
+
+        .child-image {
+          display: none; // Hide child image on mobile
+        }
+
+        h3 {
+          font-size: 18px;
+          margin: 0; // Remove additional margins for more compact display
+        }
       }
 
       .story {
-        width: 90%;
+        width: 100%;
         padding: 10px;
+
+        p {
+          font-size: 20px; // Increase font size for better readability on mobile
+          line-height: 1.8;
+          padding: 0 10px; // Padding from sides to prevent content overflow
+        }
+      }
+    }
+
+    .next-story-button {
+      bottom: 10px;
+      right: 10px; // Place it at the bottom-right side
+      width: 45px;
+      height: 45px;
+      font-size: 22px;
+    }
+  }
+
+  // Additional responsive styles for extra-small devices (phones)
+  @media (max-width: 480px) {
+    padding: 10px;
+
+    .story-content {
+      padding: 10px;
+
+      .student-name {
+        width: 100%;
+        h3 {
+          font-size: 16px;
+        }
       }
 
-      .next-story-button {
-        width: 90%;
-        margin: 10px;
-        padding: 8px 16px;
-        font-size: 14px;
-        align-self: center !important;
+      .story {
+        p {
+          font-size: 18px; // Increase readability on small devices
+          line-height: 1.6;
+          padding: 0 10px; // More padding to keep content centered and easy to read
+        }
       }
+    }
+
+    .next-story-button {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      bottom: 5px;
+      right: 5px;
     }
   }
 }
