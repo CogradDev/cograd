@@ -522,20 +522,21 @@
     }
   }
 
-  .story-heading {
-    text-align: center;
-    /* Center align text */
-    color: white;
-    margin-top: 80px;
-    font-size: 2rem;
-    /* Adjust font size for smaller screens */
+  // .story-heading {
+  //   text-align: center;
+  //   /* Center align text */
+  //   color: white;
+  //   margin-top: 80px;
+  //   font-size: 2rem;
+  //   background-color: white;
+  //   /* Adjust font size for smaller screens */
 
-    @media (max-width: 1024px) {
-      font-size: 1.5rem;
-      text-align: center;
-      /* Larger font size for bigger screens */
-    }
-  }
+  //   @media (max-width: 1024px) {
+  //     font-size: 1.5rem;
+  //     text-align: center;
+  //     /* Larger font size for bigger screens */
+  //   }
+  // }
 
   .gallery-cta {
     padding: 40px 20px;

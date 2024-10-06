@@ -280,9 +280,9 @@ const Home = () => {
 
       <Projects />
 
-      <h1 className="story-heading">
+      {/* <h1 className="story-heading">
         Stories of Success, Hope and Transformation
-      </h1>
+      </h1> */}
 
       <SuccessStories />
       <AwardsCarousel />
