@@ -1,9 +1,7 @@
-import React from 'react'
-import "./Ai.css"
+import React from "react";
+import "./Ai.css";
 const Ai = () => {
-  return (
-    <div className="Ai">Let them Know AI !</div>
-  )
-}
+  return <div className="Ai">Let them Know AI !</div>;
+};
 
-export default Ai
+export default Ai;

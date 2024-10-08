@@ -3,7 +3,7 @@ import "./Carousel.css";
 import innerMiddle from "../assets/middle.webp";
 import innerLeft from "../assets/ai.webp";
 import innerRight from "../assets/aser.webp";
-import Ai from "./Ai"
+import Ai from "./Ai";
 export const Slide1 = () => {
   return (
     <div>
@@ -17,11 +17,14 @@ export const Slide1 = () => {
 
         <div class="right">
           <div class="top">
-            <div class="is"> Innovating Schools! </div>
-            <br></br>
-            Promoting digitalisation!
+            <div class="is">
+              <p> Innovating Schools!</p>
+              <p> Promoting digitalisation!</p>
+            </div>
           </div>
-          <div class="bottom"><img src={innerLeft} /></div>
+          <div class="bottom">
+            <img src={innerLeft} />
+          </div>
         </div>
       </div>
       <Ai />
@@ -33,7 +36,9 @@ export const Slide2 = () => {
     <>
       <div class="slide1">
         <div class="left1">
-          <div class="top1"><img src={innerMiddle}/></div>
+          <div class="top1">
+            <img src={innerMiddle} />
+          </div>
           <div class="bottom1">Teach with AR</div>
         </div>
 
@@ -56,18 +61,22 @@ export const Slide3 = () => {
         <div class="left">
           <div class="number">28%</div>
           <div class="text">
-            28% students  drops out due to lack of Quality
-            Schools and Financial Constraints. as per ASER, 2023{" "}
+            28% students drops out due to lack of Quality Schools and Financial
+            Constraints. as per ASER, 2023.
           </div>
         </div>
 
         <div class="right">
           <div class="top">
-            <div class="is"> Innovating Schools! </div>
-            <br></br>
-            Promoting digitalisation!
+            <div class="is">
+              <p> Innovating Schools!</p>
+              <p> Promoting digitalisation!</p>
+            </div>
           </div>
-          <div class="bottom"> <img src={innerRight} /> </div>
+          <div class="bottom">
+            {" "}
+            <img src={innerRight} />{" "}
+          </div>
         </div>
       </div>
       <Ai />

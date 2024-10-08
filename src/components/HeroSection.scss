@@ -8,7 +8,7 @@
     flex-direction: column;
     text-align: center;
 
-    .headings{
+    .headings {
       display: flex;
       justify-content: center;
       align-items: none;
@@ -17,13 +17,13 @@
       animation: fadeInUp 1s ease forwards;
       animation-delay: 0.6s;
     }
-    .heading{
+    .heading {
       display: flex;
       padding-left: 40px;
       font-size: 50px; /* Relative font size for responsiveness */
       font-weight: 600;
       color: #333;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       font-family: "Montserrat", sans-serif;
       animation-delay: 0.2s;
 
@@ -35,8 +35,8 @@
       padding: 8vw 0; /* Use vw for padding */
       display: flex;
       flex-direction: row;
-      align-items: flex-end;}
-    
+      align-items: flex-end;
+    }
 
     h1,
     h2 {
@@ -55,11 +55,13 @@
     }
 
     h2 {
-      font-size: 2vw; /* Relative font size for responsiveness */
+      font-size: 16px; /* Relative font size for responsiveness */
       font-weight: normal;
       color: #555;
       margin-bottom: 3vw; /* Relative margin for responsiveness */
       animation-delay: 0.4s;
+      padding: 0 45px;
+      text-align: left;
     }
 
     .cta-buttons {
@@ -70,12 +72,13 @@
       transform: translateY(20px);
       animation: fadeInUp 1s ease forwards;
       animation-delay: 0.6s;
+      margin-bottom: 1vw; /* Reduce the margin-bottom to make gap smaller */
 
       button {
         padding: 1.5vw 3vw; /* Relative padding for responsiveness */
         margin: 0 1vw; /* Relative margin for responsiveness */
         border: none;
-        border-radius: 2vw; /* Relative border radius for responsiveness */
+        border-radius: 1vw; /* Relative border radius for responsiveness */
         font-size: 1.5vw; /* Relative font size for responsiveness */
         font-weight: bold;
         cursor: pointer;
@@ -103,10 +106,14 @@
         &:hover::before {
           transform: scaleX(1);
         }
-
+        &.teach-with-ai {
+          background-color: #ffe353;
+        }
         &.watch-video,
         &.teach-with-ai {
-          border: 1px solid black;
+          border: 0.5px solid black;
+          width: 40%;
+          font-size: 16px;
         }
 
         &:hover {
@@ -124,7 +131,6 @@
       transform: translateY(0);
     }
   }
-  
 
   /* Media queries for responsiveness */
   @media screen and (max-width: 1024px) {
@@ -143,15 +149,14 @@
       border-radius: 3vw; /* Adjusted border radius for smaller screens */
       font-size: 2vw; /* Adjusted font size for smaller screens */
     }
-   
   }
 
   @media screen and (max-width: 1024px) {
-    .headings{
+    .headings {
       display: flex;
       flex-direction: column;
     }
-    .heading{
+    .heading {
       font-size: 100000vw; /* Relative font size for responsiveness */
       font-weight: bold;
       color: #333;
@@ -164,7 +169,7 @@
       animation: fadeInUp 1s ease forwards;
       font-weight: 500;
     }
-   .hero{
+    .hero {
       // padding-top: 50px !important;
       margin-bottom: 50px;
     }
@@ -173,49 +178,49 @@
     }
 
     .hero h2 {
-      font-size: 4vw; /* Further adjusted font size for smaller screens */
+      font-size: 20px; /* Further adjusted font size for smaller screens */
       margin-bottom: 5vw; /* Further adjusted margin for smaller screens */
     }
 
-     .hero .cta-buttons button {
+    .hero .cta-buttons button {
       padding: 2.5vw 5vw; /* Further adjusted padding for smaller screens */
       margin: 0 2.5vw; /* Further adjusted margin for smaller screens */
       border-radius: 4vw; /* Further adjusted border radius for smaller screens */
-      font-size: 2.5vw; /* Further adjusted font size for smaller screens */
+      font-size: 3.5vw; /* Further adjusted font size for smaller screens */
     }
     .hero .statistics {
       padding: 8vw 0; /* Use vw for padding */
       display: none;
       flex-direction: row;
-      align-items: flex-end;}
+      align-items: flex-end;
+    }
   }
 
   .statistics {
-    padding: 8vw 0; /* Use vw for padding */
+    padding: 4vw 0; /* Use vw for padding */
     display: none;
     flex-direction: row;
     align-items: flex-end;
-    
-  
+
     .outer-left,
     .outer-right {
       width: 20%;
       padding: 0 2%; /* Use percentage for padding */
       position: relative;
-  
+
       .top-outer-left-box,
       .top-outer-right-box {
         position: relative;
-  
+
         img:first-child {
           width: 100%;
           transition: transform 0.3s ease;
         }
-  
+
         &:hover img:first-child {
           transform: scale(1.05);
         }
-  
+
         img.line7,
         img.rect382 {
           position: absolute;
@@ -226,48 +231,43 @@
           left: 0;
           width: 100%;
         }
-  
+
         img.rect382 {
           bottom: 1vw; /* Use vw for positioning */
           left: 0;
           z-index: 100;
           width: 100%;
         }
-  
+
         margin-bottom: 1vw; /* Use vw for margin */
-  
+
         div {
           position: absolute;
           z-index: 101;
           bottom: 3vw; /* Use vw for positioning */
           text-align: left;
           padding-left: 2vw; /* Use vw for padding */
-  
+
           h2 {
             font-size: 2vw; /* Use vw for font size */
             font-weight: bold;
             color: white;
             transition: transform 0.3s ease;
           }
-  
+
           p {
             font-size: 1.5vw; /* Use vw for font size */
             color: white;
             transition: transform 0.3s ease;
-
-      
           }
 
-
-
-  
           &:hover h2,
           &:hover span {
             transform: scale(1.1);
           }
         }
       }
-  
+
       .bottom-outer-left-box,
       .bottom-outer-right-box {
         height: 7vw; /* Use vw for height */
@@ -277,40 +277,40 @@
         align-items: center;
         background-color: black;
         transition: background-color 0.3s ease, transform 0.3s ease;
-  
+
         a {
           font-size: 1.5vw; /* Use vw for font size */
           color: white;
         }
-  
+
         &:hover {
           background-color: #333333;
           transform: scale(1.05);
         }
       }
     }
-  
+
     .middle {
       width: 50%;
       display: flex;
       justify-content: space-around;
       align-items: flex-end;
-  
+
       .inner-left,
       .inner-middle,
       .inner-right {
         width: 30%;
         position: relative;
-  
+
         img {
           width: 100%;
           transition: transform 0.3s ease;
         }
-  
+
         &:hover {
           transform: scale(1.05);
         }
-  
+
         div {
           position: absolute;
           z-index: 101;
@@ -322,13 +322,13 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-  
+
           p {
             display: block;
             font-size: 1.3vw; /* Use vw for font size */
             margin-bottom: 1vw; /* Use vw for margin */
           }
-  
+
           button {
             background-color: #ffe353;
             border: 1px solid black;
@@ -340,7 +340,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
             margin-bottom: 5px;
-  
+
             &:hover {
               background-color: #ffd700;
               transform: scale(1.1);
@@ -348,7 +348,7 @@
           }
         }
       }
-  
+
       .inner-left {
         div {
           width: 93%;
@@ -357,11 +357,11 @@
           background: linear-gradient(to right, #666666, black);
         }
       }
-  
+
       .inner-middle {
         position: relative;
         width: 25%;
-  
+
         &::after {
           content: "";
           position: absolute;
@@ -370,19 +370,23 @@
           border-radius: 2vw; /* Use vw for border radius */
           width: 100%;
           height: 100%;
-          background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+          background-color: rgba(
+            0,
+            0,
+            0,
+            0.5
+          ); /* Adjust the opacity as needed */
           transition: opacity 0.3s ease;
           opacity: 1; /* Initially hidden */
           pointer-events: none; /* Allows clicks to go through */
         }
       }
     }
-  
+
     .outer-right .bottom-outer-right-box {
       background-color: black;
     }
   }
-  
 
   @keyframes fadeInUp {
     to {

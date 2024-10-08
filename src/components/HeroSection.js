@@ -22,12 +22,12 @@ const HeroSection = () => {
       <section className="hero">
         {/* <h1>Engage . Enhance . Empower </h1> */}
         <div className="headings">
-        <div className="heading"> Engage .</div>
-        <div className="heading">Enhance .</div>
-        <div className="heading">Empower .</div>
+          <div className="heading"> Engage .</div>
+          <div className="heading">Enhance .</div>
+          <div className="heading">Empower .</div>
         </div>
 
-        <h2>Building Next-generation affordable schools for rural INDIA</h2>
+        <h2>Building Next-generation affordable schools for rural India.</h2>
         <div className="cta-buttons">
           <button className="teach-with-ai">
             <a
@@ -110,10 +110,10 @@ const HeroSection = () => {
               <div>
                 <h2>28%</h2>
                 <p>
-                 
                   28% students of Middle School drops out due to lack of Quality
-                  Schools and Financial Constraints.<br/>
-                  <i style={{fontSize: "1.5vw"}} >as per ASER, 2023</i>
+                  Schools and Financial Constraints.
+                  <br />
+                  <i style={{ fontSize: "1.5vw" }}>as per ASER, 2023</i>
                 </p>
               </div>
             </div>
