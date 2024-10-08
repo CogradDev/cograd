@@ -15,27 +15,61 @@ const CollaborationForm = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log('Form Data before submit:', formData);
+  
+  //   try {
+  //     const response = await fetch('https://sheetdb.io/api/v1/274gz7xfnpodz', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Accept': 'application/json',
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         data: [
+  //           {
+  //             'Name': formData.name,
+  //             'Email': formData.email,
+  //             'Phone': formData.phone,
+  //             'School': formData.schoolName,
+  //             'Details': formData.collaborationDetails,
+  //           },
+  //         ],
+  //       }),
+  //     });
+  
+  //     const result = await response.json();
+  //     console.log('Form Submission Result:', result);
+  
+  //     // Optionally reset the form or show a success message
+  //     setFormData({
+  //       name: '',
+  //       email: '',
+  //       phone: '',
+  //       schoolName: '',
+  //       collaborationDetails: '',
+  //     });
+  //   } catch (error) {
+  //     console.error('Error submitting form:', error);
+  //   }
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form Data before submit:', formData);
-  
+    
     try {
-      const response = await fetch('https://sheetdb.io/api/v1/274gz7xfnpodz', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxpl6QUY5jVKScIW5cLoMmpAqPKLtiY2ocOHauj1cOc55FLWHpieiOR1qAf1izojNFh/exec', { // Replace with your Web App URL
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          data: [
-            {
-              'Name': formData.name,
-              'Email': formData.email,
-              'Phone': formData.phone,
-              'School': formData.schoolName,
-              'Details': formData.collaborationDetails,
-            },
-          ],
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          schoolName: formData.schoolName,
+          collaborationDetails: formData.collaborationDetails,
         }),
       });
   
@@ -54,6 +88,7 @@ const CollaborationForm = () => {
       console.error('Error submitting form:', error);
     }
   };
+  
   
   return (
     <div className="form-container">
