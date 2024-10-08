@@ -5,6 +5,7 @@ import AboutUs from './pages/AboutUs';
 import Services from './pages/Services';
 import ContactUs from './pages/ContactUs';
 // import Carousel from './components/Carousel';
+import CollaborationForm from './pages/CollaborationForm';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/services" element={<Services/>} />
           <Route path="/contact-us" element={<ContactUs/>} />
+          <Route path="/collaboration-form" element={<CollaborationForm />} />
        {/* <Route path="/carousel" element={<Carousel />} />  */}
        {/* <Route path='/carousel' element={<Carousel />} /> */}
         </Routes>
