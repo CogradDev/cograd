@@ -200,31 +200,43 @@
   padding: 10px;
   align-items: center;
   justify-content: center;
-  background-color: #0041e8; /* Blue background */
-  position: relative; /* Necessary for absolute positioning of the lines */
+  background-color: #7696e6; /* Blue background outside the lines */
+  position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 20% 80%, 0 80%);
-  border: 2px solid transparent;
+  border: 1px solid transparent;
+  z-index: 0;
+}
+
+/* Green background perfectly between the lines */
+.right1 .green-background {
+  position: absolute;
+  top: 30%; /* Align with the first white line */
+  left: 0;
+  right: 0;
+  bottom: 30%; /* Align with the second white line */
+  background-color: #0041e8;
+  z-index: -1; /* Place it behind the lines */
+  clip-path: polygon(0 -10%, 100% 40%, 100% 100%, 0 70%);
 }
 
 .right1::before,
 .right1::after {
   content: "";
   position: absolute;
-  width: 150%; /* Increase width to cover both sides */
-  height: 2px; /* Thickness of the lines */
-  background-color: white; /* Color of the lines */
+  width: 150%;
+  height: 2px;
 }
 
 .right1::before {
-  top: 30%; /* Position the first line */
-  left: -25%; /* Adjust left to extend the line all the way */
-  transform: rotate(20deg); /* Diagonal line */
+  top: 40%; /* Position the first white line */
+  left: -10%;
+  transform: rotate(9deg);
 }
 
 .right1::after {
-  top: 70%; /* Position the second line */
-  left: -25%; /* Adjust left to extend the line all the way */
-  transform: rotate(10deg); /* Diagonal line */
+  top: 80%; /* Position the second white line */
+  left: -10%;
+  transform: rotate(10deg);
 }
 
 .text1 {
@@ -238,8 +250,8 @@
   line-height: 1.5;
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;
-  z-index: 1; /* Ensure the text appears on top of the lines */
-  position: relative; /* Keep text inside the element */
+  position: relative;
+  z-index: 1;
 }
 
 .bottom1 {

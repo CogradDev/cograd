@@ -43,6 +43,8 @@ export const Slide2 = () => {
         </div>
 
         <div class="right1">
+          <div class="green-background"></div>
+
           <div className="text1">
             Enhancing lives and creating impacts through digitalization.
           </div>
