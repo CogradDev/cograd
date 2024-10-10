@@ -184,25 +184,49 @@
   flex-direction: column;
 }
 .top1 {
-  width: 100%;
+  width: 110%;
   height: 80%;
-  background-color: red;
 }
 .top1 img {
   width: 100%;
-  height: 100%;
+  height: 90%;
+  z-index: -1;
+
   object-fit: fill; /* Ensures the image fills the box and maintains aspect ratio */
 }
 .right1 {
   width: 50%;
-  height: 100%;
+  height: 80%;
   padding: 10px;
   align-items: center;
   justify-content: center;
-  background-color: #0041e8;
+  background-color: #0041e8; /* Blue background */
+  position: relative; /* Necessary for absolute positioning of the lines */
   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 20% 80%, 0 80%);
   border: 2px solid transparent;
 }
+
+.right1::before,
+.right1::after {
+  content: "";
+  position: absolute;
+  width: 150%; /* Increase width to cover both sides */
+  height: 2px; /* Thickness of the lines */
+  background-color: white; /* Color of the lines */
+}
+
+.right1::before {
+  top: 30%; /* Position the first line */
+  left: -25%; /* Adjust left to extend the line all the way */
+  transform: rotate(20deg); /* Diagonal line */
+}
+
+.right1::after {
+  top: 70%; /* Position the second line */
+  left: -25%; /* Adjust left to extend the line all the way */
+  transform: rotate(10deg); /* Diagonal line */
+}
+
 .text1 {
   width: 100%;
   padding-top: 20%;
@@ -210,20 +234,25 @@
   padding-left: 10px;
   color: white;
   text-align: left;
-  font-size: 16px; /* Adjusts the font size for readability */
-  line-height: 1.5; /* Adds line spacing to improve text readability */
-  /* Horizontally centers the text box */
+  font-size: 16px;
+  line-height: 1.5;
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;
+  z-index: 1; /* Ensure the text appears on top of the lines */
+  position: relative; /* Keep text inside the element */
 }
+
 .bottom1 {
   width: 100%;
-  height: 50px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: black;
   color: white;
   z-index: 100;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 20px;
   font-size: 20px;
 }
